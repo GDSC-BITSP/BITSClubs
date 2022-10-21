@@ -6,7 +6,7 @@
         <div class="post-title mx-auto">Frontend Developers</div>
 
         <v-row class="d-flex justify-space-around">
-          <v-col class="mb-15" cols="3" v-for="dev in data[0]" :key="dev.no">
+          <v-col class="mb-15" cols="3" v-for="dev in details[0]" :key="dev.no">
             <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin" :githuburl="dev.github" />
           </v-col>
         </v-row>
@@ -14,7 +14,7 @@
         <div class="post-title mx-auto mb-6">Backend Developers</div>
 
         <v-row class="d-flex justify-space-around">
-          <v-col class="mb-6" cols="3" v-for="dev in data[1]" :key="dev.no">
+          <v-col class="mb-6" cols="3" v-for="dev in details[1]" :key="dev.no">
             <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin" :githuburl="dev.github" />
           </v-col>
         </v-row>
@@ -22,7 +22,7 @@
         <div class="post-title mx-auto">Creative Team</div>
 
         <v-row class="d-flex justify-space-around">
-          <v-col class="mb-6" cols="3" v-for="dev in data[2]" :key="dev.no">
+          <v-col class="mb-6" cols="3" v-for="dev in details[2]" :key="dev.no">
             <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin" :githuburl="dev.github" />
           </v-col>
         </v-row>
@@ -52,7 +52,8 @@ export default {
   },
   data() {
     return {
-      data: [Fdetails, Bdetails, Cdetails]
+      details: [Fdetails, Bdetails, Cdetails],
+      
     };
   },
 };
