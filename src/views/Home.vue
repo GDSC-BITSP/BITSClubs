@@ -332,6 +332,7 @@ export default {
     margin-top: 60px;
     text-align: center;
     margin-bottom: 50px;
+    
   }
   .blue--underline {
     text-decoration: underline;
@@ -339,12 +340,12 @@ export default {
   }
   .home--header>h1 {
     color: #FFF;
-    font-size: 48px;
+    font-size: 45px;
     margin-bottom: 25px;
   }
   .home--header>h4 {
     color: #C7C7C7;
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .home--display--tiles {
@@ -444,7 +445,7 @@ router-link {
 .home-card p {
   text-align: left;
   margin-top: 25px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 .home-card img {
   width:400px;
@@ -480,7 +481,7 @@ router-link {
   cursor: pointer;
   padding: 7px 16px;
   transition: 0.3s;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   font-weight: 500;
 }
 
@@ -570,7 +571,9 @@ color: #FFF;
 text-decoration: none;
 }
 .home-footer-2 {
-  font-size: 1.75rem;
+  margin-top: 100px;
+  font-size: 1.5rem;
+  font-weight: 0;
 }
 
 </style>
