@@ -1,0 +1,58 @@
+[
+  {
+    "no": 1,
+    "img": "Dev_Insta.jpg",
+    "name": "Devank Shrimal",
+    "post": "Frontend Developer",
+    "linkedin": "https://www.linkedin.com/in/devank-shrimal-4b887621a",
+    "github": "https://github.com/Devank0110"
+  },
+  {
+    "no": 2,
+    "img": "Anish Kulkarni.jpg",
+    "name": "Anish Kulkarni",
+    "post": "Frontend Developer",
+    "linkedin": "https://www.linkedin.com/in/0803-anish-kulkarni/",
+    "github": "https://github.com/AnishKulkarni01"
+  },
+  {
+    "no": 3,
+    "img": "Dev_Insta.jpg",
+    "name": "Jatin Bansal",
+    "post": "Frontend Developer",
+    "linkedin": "lurl",
+    "github": "gurl"
+  },
+  {
+    "no": 4,
+    "img": "Dev_Insta.jpg",
+    "name": "Shivam Mishra",
+    "post": "Frontend Developer",
+    "linkedin": "lurl",
+    "github": "gurl"
+  },
+  {
+    "no": 5,
+    "img": "Dev_Insta.jpg",
+    "name": "Shivam Mishra",
+    "post": "Frontend Developer",
+    "linkedin": "lurl",
+    "github": "gurl"
+  },
+  {
+    "no": 6,
+    "img": "Dev_Insta.jpg",
+    "name": "Shivam Mishra",
+    "post": "Frontend Developer",
+    "linkedin": "lurl",
+    "github": "gurl"
+  },
+  {
+    "no": 7,
+    "img": "Dev_Insta.jpg",
+    "name": "Shivam Mishra",
+    "post": "Frontend Developer",
+    "linkedin": "lurl",
+    "github": "gurl"
+  }
+]
