@@ -1,82 +1,54 @@
 <template>
   <div class="home">
-   <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../assets/bits-image.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/bits-image.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/bits-image.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
     <div class="home--header">
       <h1>Welcome to <span class="blue--underline">BITS Clubs</span></h1>
       <h4>One stop destination for all your club needs</h4>
     </div>
 
-
     <div class="home--display--tiles">
       <div class="col1">
         <div class="flip-card">
-        <div class="col1--row1 flip-card-inner">
-          <div class="flip-card-front">
-            <img src="../assets/Col1Row1.png">
-          </div>
-          <!-- <div class="flip=card-back">
+          <div class="col1--row1 flip-card-inner">
+            <div class="flip-card-front">
+              <img src="../assets/Col1Row1.png" />
+            </div>
+            <!-- <div class="flip=card-back">
             Coding
           </div> -->
-        </div>
+          </div>
         </div>
         <div class="col1--row2">
           <!-- <div class="flip-card-front"> -->
-            <img src="../assets/Col1Row2.png">
+          <img src="../assets/Col1Row2.png" />
           <!-- </div> -->
         </div>
       </div>
       <div class="col2">
         <!-- <div class="flip-card-front"> -->
-          <img src="../assets/Col2.png">
+        <img src="../assets/Col2.png" />
         <!-- </div> -->
       </div>
       <div class="col3">
         <div class="col3--row1">
-          <div><!--<div class="flip-card-front"> -->
-            <img src="../assets/Col3Row1_1.png">
-          <!-- </div> -->
-        </div>
+          <div>
+            <!--<div class="flip-card-front"> -->
+            <img src="../assets/Col3Row1_1.png" />
+            <!-- </div> -->
+          </div>
           <div>
             <!-- <div class="flip-card-front"> -->
-            <img src="../assets/Col3Row1_2.png">
-          <!-- </div> -->
-        </div>
+            <img src="../assets/Col3Row1_2.png" />
+            <!-- </div> -->
+          </div>
         </div>
         <div class="col1--row2">
           <!-- <div class="flip-card-front"> -->
-            <img src="../assets/Col3Row2.png">
+          <img src="../assets/Col3Row2.png" />
           <!-- </div> -->
         </div>
       </div>
     </div>
 
-
-    
     <!-- <div class="club-grid">
       <div 
         v-for="clubitem in clubs"
@@ -95,86 +67,174 @@
         </router-link>
 
       </div> -->
+    
+    <div class="desktop">
+      <div class="tab">
+        <button class="tablinks active" @click="openTab('Clubs')">
+          Clubs
+          <div class="und"></div>
+        </button>
+        <button class="tablinks " @click="openTab('Depts')">
+          Departments
+          <div class="und"></div>
+        </button>
+        <button class="tablinks " @click="openTab('Assocs')">
+          Assocs
+          <div class="und"></div>
+        </button>
+        <button class="tablinks" @click="openTab('TechTeams')">
+          Tech Teams
+          <div class="und"></div>
+        </button>
+      </div>
+      <button class="listpglink">See All</button>
+      <!-- clubs -->
+      <div id="Clubs" class="tabcontent" style="display:block">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in clubs"
+            v-if="index < 3"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <router-link class="d-block" to="/club" exact
+              ><img :src="item.imglink" class="d-block w-100" alt="..."
+            /></router-link>
+            <p>{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
 
+      <!-- Departments -->
+      <div id="Depts" class="tabcontent">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in depts"
+            v-if="index < 3"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <img :src="item.imglink" class="d-block w-100" alt="..." />
+            <p>{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
 
-
-<div class="tab">
-      <button class="tablinks active" @click="openTab('Clubs')">
-        Clubs
-        <div class="und"></div>
-      </button>
-      <button class="tablinks " @click="openTab('Depts')">
-        Departments
-        <div class="und"></div>
-      </button>
-      <button class="tablinks " @click="openTab('Assocs')">
-        Assocs
-        <div class="und"></div>
-      </button>
-      <button class="tablinks" @click="openTab('TechTeams')">
-        Tech Teams
-        <div class="und"></div>
-      </button>
-    </div>
-     <button class="listpglink">See All</button>
-    <!-- clubs -->
-    <div id="Clubs" class="tabcontent" style="display:block">
-      <div class="home-clubs">
-        <div
-          v-for="(item, index) in clubs" v-if="index < 3"
-          class="d-block w-25 mx-3 home-card"
-        >
-          <router-link class="d-block" to="/club" exact><img :src="item.imglink" class="d-block w-100" alt="..." /></router-link>
-          <p>{{ item.name }}</p>
+      <!-- Assocs -->
+      <div id="Assocs" class="tabcontent">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in assocs"
+            v-if="index < 3"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <img :src="item.imglink" class="d-block w-100" alt="..." />
+            <p>{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tech Teams -->
+      <div id="TechTeams" class="tabcontent">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in techteams"
+            v-if="index < 3"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <img :src="item.imglink" class="d-block w-100" alt="..." />
+            <p>{{ item.name }}</p>
+          </div>
         </div>
       </div>
     </div>
+    <div class="mobile">
+      <div class="dropdown" >
+        <button class="dropbtn" id="drpbtn" @click="show()">Clubs</button>
+        <div class="dropdown-content" id="drpdwn">
+          <button class="tablinks active mob-btn " id="clubbtn" @click="openTab('Clubs')">
+            Clubs
+            
+          </button>
+          <button class="tablinks mob-btn " id="deptbtn" @click="openTab('Depts')">
+            Departments
+          
+          </button>
+          <button class="tablinks mob-btn " id="assocbtn" @click="openTab('Assocs')">
+            Assocs
+          
+          </button>
+          <button class="tablinks mob-btn" id="ttbtn" @click="openTab('TechTeams')">
+            Tech Teams
+            
+          </button>
+        </div>
+      </div>
+      <div id="Clubs-mob" class="tabcontent" style="display:block">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in clubs"
+            v-if="index < 2"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <router-link class="d-block" to="/club" exact
+              ><img :src="item.imglink" class="d-block w-100" alt="..."
+            /></router-link>
+            <p>{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Departments -->
-    <div id="Depts" class="tabcontent">
-      <div class="home-clubs">
-        <div
-          v-for="(item, index) in depts"
-          v-if="index < 3"
-          class="d-block w-25 mx-3 home-card"
-        >
-          <img :src="item.imglink" class="d-block w-100" alt="..." />
-          <p>{{ item.name }}</p>
+      <!-- Departments -->
+      <div id="Depts-mob" class="tabcontent">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in depts"
+            v-if="index < 2"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <img :src="item.imglink" class="d-block w-100" alt="..." />
+            <p>{{ item.name }}</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Assocs -->
-    <div id="Assocs" class="tabcontent">
-      <div class="home-clubs">
-        <div
-          v-for="(item, index) in assocs"
-          v-if="index < 3"
-          class="d-block w-25 mx-3 home-card"
-        >
-          <img :src="item.imglink" class="d-block w-100" alt="..." />
-          <p>{{ item.name }}</p>
+      <!-- Assocs -->
+      <div id="Assocs-mob" class="tabcontent">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in assocs"
+            v-if="index < 2"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <img :src="item.imglink" class="d-block w-100" alt="..." />
+            <p>{{ item.name }}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Tech Teams -->
-    <div id="TechTeams" class="tabcontent">
-      <div class="home-clubs">
-        <div
-          v-for="(item, index) in techteams"
-          v-if="index < 3"
-          class="d-block w-25 mx-3 home-card"
-        >
-          <img :src="item.imglink" class="d-block w-100" alt="..." />
-          <p>{{ item.name }}</p>
+      <!-- Tech Teams -->
+      <div id="TechTeams-mob" class="tabcontent">
+        <div class="home-clubs">
+          <div
+            v-for="(item, index) in techteams"
+            v-if="index < 2"
+            class="d-block w-25 mx-3 home-card"
+          >
+            <img :src="item.imglink" class="d-block w-100" alt="..." />
+            <p>{{ item.name }}</p>
+          </div>
         </div>
       </div>
+
+
+
     </div>
 
 
 
     <div class="home-footer">
-      <div class="home-footer-1"><router-link class="home-footer-1" to="/developers" exact>Developers</router-link></div>
+      <div class="home-footer-1">
+        <router-link class="home-footer-1" to="/developers" exact
+          >Developers</router-link
+        >
+      </div>
       <div class="home-footer-2">
         <p>
           <svg
@@ -207,65 +267,67 @@
       </div>
     </div>
     <!-- <Footer/> -->
-    </div>
-
-
- 
+  </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import ClubItem from '@/components/ClubItem.vue'
-import axios from 'axios'
-import AllTags from '@/components/AllTags.vue'
+import Navbar from "@/components/Navbar.vue";
+import ClubItem from "@/components/ClubItem.vue";
+import axios from "axios";
+import AllTags from "@/components/AllTags.vue";
 // import Footer from '@/components/Footer.vue'
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Navbar,
     ClubItem,
     AllTags,
-  }, 
+  },
   data() {
-		return {
-			 //  information about clubs, depts , assocs , techteams from backend
+    return {
+      //  information about clubs, depts , assocs , techteams from backend
 
       clubs: [
         { name: "Dance Club", imglink: require("@/assets/bits-image.png") },
-        { name: "Wall Street Club", imglink:  require("@/assets/bits-image.png") },
+        {
+          name: "Wall Street Club",
+          imglink: require("@/assets/bits-image.png"),
+        },
         {
           name: "English Language Activities Society",
-          imglink:  require("@/assets/bits-image.png"),
+          imglink: require("@/assets/bits-image.png"),
         },
         { name: "Dance Club", imglink: require("@/assets/bits-image.png") },
       ],
       depts: [
         { name: "DVM", imglink: require("@/assets/bits-image.png") },
-        { name: "Department of Controls", imglink:  require("@/assets/bits-image.png") },
+        {
+          name: "Department of Controls",
+          imglink: require("@/assets/bits-image.png"),
+        },
         {
           name: "DLE",
-          imglink:  require("@/assets/bits-image.png"),
+          imglink: require("@/assets/bits-image.png"),
         },
         { name: "Dance Club", imglink: require("@/assets/bits-image.png") },
       ],
       techteams: [
-        { name: "SUTT", imglink:  require("@/assets/bits-image.png") },
-        { name: "PUTT", imglink:  require("@/assets/bits-image.png") },
-        
+        { name: "SUTT", imglink: require("@/assets/bits-image.png") },
+        { name: "PUTT", imglink: require("@/assets/bits-image.png") },
       ],
       assocs: [
-        { name: "HCA", imglink:  require("@/assets/bits-image.png") },
-        { name: "CSA", imglink:  require("@/assets/bits-image.png") },
+        { name: "HCA", imglink: require("@/assets/bits-image.png") },
+        { name: "CSA", imglink: require("@/assets/bits-image.png") },
         {
           name: "Maths",
-          imglink:  require("@/assets/bits-image.png"),
+          imglink: require("@/assets/bits-image.png"),
         },
         ,
       ],
       error: null,
     };
-    },
-    methods: {
+  },
+  methods: {
     openTab(category) {
       var i, tabcontent, tablinks;
       var j = 0;
@@ -283,10 +345,24 @@ export default {
       var element = tablinks[j];
       element.classList.add("active");
       document.getElementById(category).style.display = "block";
+      document.getElementById("drpbtn").innerHTML = category;
+      document.getElementById("drpdwn").style.display = "none";
+      if(category=="Clubs")
+      document.getElementById("Clubs-mob").style.display="block";
+      if(category=="Depts")
+      document.getElementById("Depts-mob").style.display="block";
+      if(category=="Assocs")
+      document.getElementById("Assocs-mob").style.display="block";
+      if(category=="TechTeams")
+      document.getElementById("TechTeams-mob").style.display="block";
+     
+      
+      
     },
 
-    method() {
-      //console.log(clubs[0].imglink);
+    show() {
+      document.getElementById("drpdwn").style.display="block";
+      
     },
     // async mounted () {
     //   try {
@@ -297,134 +373,138 @@ export default {
     //     this.error = error;
     //   }
     // }
+    
+  },
+  m()
+  {
+   
+      document.getElementById("Clubs-mob").style.display="block";
+      
+      document.getElementById("Depts-mob").style.display="none";
+     
+      document.getElementById("Assocs-mob").style.display="none";
+     
+      document.getElementById("TechTeams-mob").style.display="none";
   },
 
   created() {
-    this.method();
+    this.m();
   },
 };
-  
-  // async mounted () {
-  //   try {
-  //     const response = await axios.get('https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*')
-  //     this.clubs = response.data.data
-  //     console.log(this.clubs)
-  //   } catch (error) {
-  //     this.error = error;
-  //   }
-  // }
 
-
+// async mounted () {
+//   try {
+//     const response = await axios.get('https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*')
+//     this.clubs = response.data.data
+//     console.log(this.clubs)
+//   } catch (error) {
+//     this.error = error;
+//   }
+// }
 </script>
 
 <style scoped>
-
-
-  .home {
-    padding: none;
-    padding-bottom: 75px;
-    /* margin: 0 40px 0 40px; */
-    width: 100%;
-    height:100%;
-  }
-
-  .home--header {
-    margin-top: 60px;
-    text-align: center;
-    margin-bottom: 50px;
-    
-  }
-  .blue--underline {
-    text-decoration: underline;
-    text-decoration-color: #1F86FB;
-  }
-  .home--header>h1 {
-    color: #FFF;
-    font-size: 45px;
-    margin-bottom: 25px;
-  }
-  .home--header>h4 {
-    color: #C7C7C7;
-    font-size: 30px;
-  }
-
-  .home--display--tiles {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 100px;
-  }
-
-  .col3--row1 {
-    display: flex;
-  }
-  img {
-    margin: 10px;
-  }
-  
-
-  #carouselExampleIndicators{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
-  }
-  .carousel-inner{
-    width: 100%;
-  }
-
-  .carousel-inner img{
-    border-radius: 8px;
-  }
-  .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    margin:-15px 8px
+.home {
+  padding: none;
+  padding-bottom: 75px;
+  /* margin: 0 40px 0 40px; */
+  width: 100%;
+  height: 100%;
 }
 
-  .hero-image {
-    height: 500px;
-    width: 90vw;
-    background: #2F2F2F;
-    margin: 20px 60px 20px 60px;
-    border-radius: 20px;
-    background-image: url(../assets/bits-image.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
+.home--header {
+  margin-top: 60px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.blue--underline {
+  text-decoration: underline;
+  text-decoration-color: #1f86fb;
+}
+.home--header > h1 {
+  color: #fff;
+  font-size: 45px;
+  margin-bottom: 25px;
+}
+.home--header > h4 {
+  color: #c7c7c7;
+  font-size: 30px;
+}
 
-  .club-grid {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-  }
+.home--display--tiles {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
 
-  .media-slider {
-    overflow-x: scroll;
-  }
+.col3--row1 {
+  display: flex;
+}
+img {
+  margin: 10px;
+}
 
- .tags-section {
-        display: flex;
-        margin: 2px 10px 5px 10px;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        
-    }
+#carouselExampleIndicators {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+.carousel-inner {
+  width: 100%;
+}
+
+.carousel-inner img {
+  border-radius: 8px;
+}
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: -15px 8px;
+}
+
+.hero-image {
+  height: 500px;
+  width: 90vw;
+  background: #2f2f2f;
+  margin: 20px 60px 20px 60px;
+  border-radius: 20px;
+  background-image: url(../assets/bits-image.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.club-grid {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.media-slider {
+  overflow-x: scroll;
+}
+
+.tags-section {
+  display: flex;
+  margin: 2px 10px 5px 10px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 router-link {
   text-decoration: none;
 }
 
-@media (max-width: 650px){
-
-  .hero-image{
+@media (max-width: 650px) {
+  .hero-image {
     width: 85vw;
-    height: 250px;  
+    height: 250px;
   }
 }
 
@@ -433,8 +513,7 @@ router-link {
   text-decoration: none; /* no underline */
 }
 
-
-.club-grid{
+.club-grid {
   justify-content: center;
 }
 .home {
@@ -448,13 +527,13 @@ router-link {
   font-size: 1.6rem;
 }
 .home-card img {
-  width:400px;
-  height:230px;
+  width: 400px;
+  height: 230px;
   transform: scale(1.15);
 }
 .home-clubs {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   max-width: 100%;
   margin-top: 60px;
@@ -466,7 +545,7 @@ router-link {
 .tab {
   display: flex;
   color: white;
-  justify-content:space-around;
+  justify-content: space-around;
   margin-bottom: 50px;
 }
 
@@ -487,7 +566,7 @@ router-link {
 
 /* Change background color of buttons on hover */
 .tab button:hover .und {
-  background-color: #5ea4f4;
+  
   height: 4px;
   border-radius: 12px;
 }
@@ -499,13 +578,13 @@ router-link {
   border-radius: 12px;
 }
 
-.listpglink{
+.listpglink {
   font-size: 1.2rem;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   border: none;
   color: white;
 }
-.listpglink:hover{
+.listpglink:hover {
   text-decoration: underline;
 }
 /* Style the tab content */
@@ -550,7 +629,7 @@ p {
   .home-card {
     flex-wrap: nowrap;
   }
-  .tab button{
+  .tab button {
     font-size: 1.2rem;
   }
 }
@@ -558,17 +637,17 @@ p {
 .home-footer {
   position: absolute;
   background-color: #222f37;
- height: 325px;
-  width:100%;
+  height: 325px;
+  width: 100%;
   padding-top: 60px;
   padding-bottom: 40px;
 }
 .home-footer-1 {
   font-size: 2rem;
-margin-bottom: 60px;
-font-weight: 500;
-color: #FFF;
-text-decoration: none;
+  margin-bottom: 60px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
 }
 .home-footer-2 {
   margin-top: 100px;
@@ -576,4 +655,89 @@ text-decoration: none;
   font-weight: 0;
 }
 
+@media screen and (max-width: 500px) {
+  .desktop {
+    display: none;
+  }
+  .mobile .tabcontent{
+    display: none;
+  }
+  
+  .tabcontent{
+    display: block;
+  }
+  .home-card img {
+    height: 140px;
+    transform: scale(1.5,1.2);
+    z-index: 1;
+  }
+  .home-card p {
+    font-size: 24px;
+  }
+
+  .dropbtn {
+  background-color: #222f37;
+  color: white;
+  font-size: 34px;
+  
+  border-radius: 2%;
+  height: 64px;
+  width: 312px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+.dropdown-content tablinks  {
+ 
+}
+.mob-btn{
+  display: block;
+  background-color: #222f37;
+ 
+  color: white;
+  padding: 16px;
+  font-size: 30px;
+  height: 64px;
+  width: 312px;
+  border: none;
+  cursor: pointer;
+
+  
+
+}
+.home-footer p{
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+
+
+.dropdown:hover .dropbtn {
+  background-color: #222f37;
+}
+}
+
+
+@media screen and (min-width: 700px) {
+    /* Styles go here */
+    .mobile{
+      display: none;
+    }
+
+}
 </style>
