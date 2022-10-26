@@ -18,24 +18,45 @@ const routes = [
     }
   },
   {
-    path: '/calendar',
-    name: 'Calendar',
+    path: '/recruitments',
+    name: 'Recruitments',
     component: function () {
-      return import('../views/Calendar.vue')
+      return import('../views/Recruitments.vue')
     }
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/events',
+    name: 'Events',
     component: function () {
-      return import('../views/About.vue')
+      return import('../views/Events.vue')
     }
   },
   {
     path: '/club',
     name: 'Club',
     component: function () {
-      return import('../views/Club.vue')
+      return import('../views/Club2.vue')
+    }
+  },
+  {
+    path: '/Assocs',
+    name: 'Assocs',
+    component: function () {
+      return import('../views/Club1.vue')
+    }
+  },
+  {
+    path: '/Depts',
+    name: 'Depts',
+    component: function () {
+      return import('../views/Club1.vue')
+    }
+  },
+  {
+    path: '/TechTeams',
+    name: 'TechTeams',
+    component: function () {
+      return import('../views/Club2.vue')
     }
   },
   {
@@ -44,7 +65,7 @@ const routes = [
     component: function () {
       return import ('../views/Developers.vue')
     }
-  }
+  },
 ]
 
 const router = new VueRouter({

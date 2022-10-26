@@ -32,7 +32,7 @@
     </div>
 
 
-    <div class="home--display--tiles">
+    <div class="home--display--tiles_desktop">
       <div class="col1">
         <div class="flip-card">
         <div class="col1--row1 flip-card-inner">
@@ -71,6 +71,49 @@
           <!-- <div class="flip-card-front"> -->
             <img src="../assets/Col3Row2.png">
           <!-- </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="home--display--tiles_mobile">
+      <div class="row1">
+        <div class="row1--col1 flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../assets/Col1Row1.png">
+          </div>
+          <!-- <div class="flip=card-back">
+            Coding
+          </div> -->
+        </div>
+        <div class="row1--col2">
+          <!-- <div class="flip-card-front"> -->
+            <img src="../assets/Col1Row2.png">
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="row2">
+        <!-- <div class="flip-card-front"> -->
+          <div class="row2--col1">
+          <img src="../assets/Col3Row1_2.png">
+          </div>
+          <div class="row3--col2">
+          <!-- <div class="flip-card-front"> -->
+            <img src="../assets/Col3Row1_1.png">
+          <!-- </div> -->
+        </div>
+        <!-- </div> -->
+      </div>
+      <div class="row3">
+        <div class="row3--col1">
+          <!--<div class="flip-card-front"> -->
+            <img src="../assets/Col3Row2.png">
+          <!-- </div> -->
+        <!-- </div> -->
+          <!-- <div> -->
+            <!-- <div class="flip-card-front"> -->
+            <!-- <img src="../assets/Col3Row1_2.png"> -->
+          <!-- </div> -->
+        <!-- </div> -->
         </div>
       </div>
     </div>
@@ -172,6 +215,17 @@
     </div>
 
 
+    <div class="dropdown_mobile">
+      <select name="choiceOfDept">
+        <option value="Clubs"></option>
+        <option value="Depts"></option>
+        <option value="Assocs"></option>
+        <option value="Tech Teams"></option>
+      </select>
+
+    </div>
+
+
 
     <div class="home-footer">
       <div class="home-footer-1"><router-link class="home-footer-1" to="/developers" exact>Developers</router-link></div>
@@ -263,6 +317,7 @@ export default {
         ,
       ],
       error: null,
+      screenWidth: screen.width,
     };
     },
     methods: {
@@ -286,7 +341,8 @@ export default {
     },
 
     method() {
-      //console.log(clubs[0].imglink);
+      screenWidth=screen.width
+      console.log(screenWidth)
     },
     // async mounted () {
     //   try {
@@ -319,6 +375,16 @@ export default {
 
 <style scoped>
 
+  .mobile {
+    display: none;
+  }
+.home--display--tiles_mobile {
+  display: none;
+}
+.dropdown_mobile {
+  display: none;
+}
+
 
   .home {
     padding: none;
@@ -347,7 +413,7 @@ export default {
     font-size: 36px;
   }
 
-  .home--display--tiles {
+  .home--display--tiles_desktop {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -421,10 +487,51 @@ router-link {
 
 @media (max-width: 650px){
 
+  .dropdown_mobile {
+    /* display: block; */
+    display: inline;
+    color: #FFF;
+    width: 130px;
+  }
+
+  .tab {
+    display: none;
+  }
+
+  .row1,.row2,.row3 {
+    display: flex;
+    margin-left: 20px;
+    margin: auto;
+  }
+  img {
+    height:23vh;
+    width: 35vw;
+  }
+  .row3--col1>img {
+    width:74vw;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .home--display--tiles_desktop {
+    display: none;
+  }
+
+  .home--display--tiles_mobile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+
   .hero-image{
     width: 85vw;
     height: 250px;  
   }
+  /* .removemb {
+    display: none;
+  } */
 }
 
 .router-link-style {

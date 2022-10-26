@@ -42,14 +42,14 @@
                 <router-link 
                     active-class="nav-active"
                     class="nav-item"
-                    to="/calendar" exact
+                    to="/events" exact
                 ><span class="remove-tab">Events</span></router-link>
             </div>
             <div class="nav-item">
                 <router-link 
                     active-class="nav-active"
                     class="nav-item"
-                    to="/about" exact
+                    to="/recruitments" exact
                 ><span class="remove-tab">Recruitments</span></router-link>
             </div>
         </div>
