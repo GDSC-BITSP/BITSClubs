@@ -1,17 +1,17 @@
 <template>
-    <v-card :class="`d-flex justify-space-around`" :cols="3" color="#171717" flat tile>
-        <v-card class="mx-auto" max-width="230" color="#171717">
-            <v-img :src={imgName} class="dev-img"></v-img>
+    <v-card class="d-flex justify-space-around" color="#1E1F1E" flat tile>
+        <v-card class="mx-auto" color="#1E1F1E">
+            <v-img :src="require(`@/assets/images/${imgName}`)" class="dev-img justify-center mx-auto"></v-img>
 
-            <v-card-title class="dev-name mx-auto py-5 justify-center">
-                {{name}}
+            <v-card-title class="dev-name mx-auto mt-5 justify-center">
+                {{ name }}
             </v-card-title>
 
-            <v-card-subtitle class="dev-post mx-auto py-2">
-                {{post}}
+            <v-card-subtitle class="dev-post mx-auto my-1 px-0">
+                {{ post }}
             </v-card-subtitle>
 
-            <div class="py-4 d-flex justify-center">
+            <div class="d-flex justify-center">
                 <div class="px-1">
                     <a :href="linkedinurl">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="socials">
@@ -54,6 +54,7 @@ export default {
 </script>
 
 <style>
+
 .col {
     padding: 0px;
 }
@@ -85,7 +86,7 @@ export default {
     width: 240px;
     /* height: 34px; */
 
-    font-family: "Google Sans";
+    font-family: "Google-Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
@@ -107,7 +108,7 @@ export default {
     width: 240px;
     /* height: 28px; */
 
-    font-family: "Google Sans";
+    font-family: "Google-Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -148,5 +149,27 @@ export default {
 
 path#svg:hover {
     fill: #E9E9E9;
+}
+
+
+@media(max-width: 650px) {
+    .dev-img {
+        width: 96px;
+        height: 96px;
+    }
+
+    .dev-name {
+        height: 23px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .dev-post {
+        height: 23px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+    }
 }
 </style>
