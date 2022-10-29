@@ -5,12 +5,12 @@
       <h4>One stop destination for all your club needs</h4>
     </div>
 
-<<<<<<< HEAD
+
 
     <div class="home--display--tiles_desktop">
-=======
+
     <div class="home--display--tiles">
->>>>>>> 48fb6bdfd016026b63bb45f9a0591967c58b59c3
+
       <div class="col1">
         <div class="flip-card">
           <div class="col1--row1 flip-card-inner">
