@@ -6,26 +6,30 @@
 </template>
 
 <script>
+
 import Navbar from '@/components/Navbar.vue'
+
 
 export default {
   components: {
     Navbar
   }
-}
-
+};
 </script>
 
 <style>
 @font-face {
-  font-family: Google Sans;
-  src: url("../src/assets/GoogleSans-22Jan2018-v1_27/GoogleSans-Medium-v1.27.ttf");
+  font-family: "Google-Sans";
+  src: local("Google-Sans"),
+    url(./assets/GoogleSans-22Jan2018-v1_27/GoogleSansDisplay-Regular-v1.27.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Google Sans, sans-serif;
+  font-family: Google-Sans, sans-serif;
   text-align: center;
   background: #1E1F1E;
 }
