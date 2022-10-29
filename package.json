@@ -18,13 +18,21 @@
     "vue-js-modal": "^2.0.0-rc.6",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.5.2",
+<<<<<<< HEAD
     "vueify": "^9.4.1",
     "yarn": "^1.22.19"
+=======
+    "vuetify": "^2.6.0"
+>>>>>>> 48fb6bdfd016026b63bb45f9a0591967c58b59c3
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
     "v-tooltip": "^4.0.0-alpha.1",
-    "vue-template-compiler": "^2.6.14"
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "vue-template-compiler": "^2.6.14",
+    "vuetify-loader": "^1.7.0"
   }
 }
