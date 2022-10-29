@@ -40,66 +40,73 @@ export default {
     ClubItem,
   },
   data() {
-    return {
-      renderComponent: true,
-      clubs: [],
-      error: null,
-      search: "",
-      search_param: "",
-    };
-  },
-  mounted: function mounted() {
-    this.getAllData();
-  },
-  methods: {
-    callMeMaybe(search_param) {
-      this.search = search_param;
-      this.getAllData();
-      console.log(search_param);
-    },
-    getAllData() {
-      if (this.search !== "") {
-        this.clubs=[];
-        let newIds = [];
-        var newClubs = [];
-        axios
-          .get("https://clubs.bits-dvm.org/items/clubs?search=" + this.search)
-          .then((response) => {
-            var someClubs = [];
-            someClubs = response.data.data;
-            console.log(someClubs);
-            someClubs.forEach((item) => {
-              console.log(item);
-              newIds = [...newIds, item.id];
-            });
-            console.log(newIds);
-
-            // console.log(newIds + "pl");
-
-            newIds.forEach((id) => {
-              axios
-                .get(
-                  "https://clubs.bits-dvm.org/items/clubs/" +
-                    id +
-                    "?fields[]=*.*.*"
-                )
-                .then((response) => {
-                  newClubs = [...newClubs, response.data.data];
-                  console.log(newClubs);
-                  this.clubs = newClubs;
-                });
-            });
-          });
-      } else {
-        return axios
-          .get("https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*")
-          .then((response) => {
-            this.clubs = response.data.data;
-            console.log(this.clubs);
-          });
+    // return {
+    //   renderComponent: true,
+    //   clubs: [],
+    //   error: null,
+    //   search: "",
+    //   search_param: "",
+    // };
+    clubs: [
+      {
+        "id":"1",
+        "name":"xyz",
+        "type":"coding"
       }
-    },
+    ]
   },
+  // mounted: function mounted() {
+  //   this.getAllData();
+  // },
+  // methods: {
+  //   callMeMaybe(search_param) {
+  //     this.search = search_param;
+  //     this.getAllData();
+  //     console.log(search_param);
+  //   },
+  //   getAllData() {
+  //     if (this.search !== "") {
+  //       this.clubs=[];
+  //       let newIds = [];
+  //       var newClubs = [];
+  //       axios
+  //         .get("https://clubs.bits-dvm.org/items/clubs?search=" + this.search)
+  //         .then((response) => {
+  //           var someClubs = [];
+  //           someClubs = response.data.data;
+  //           console.log(someClubs);
+  //           someClubs.forEach((item) => {
+  //             console.log(item);
+  //             newIds = [...newIds, item.id];
+  //           });
+  //           console.log(newIds);
+
+  //           // console.log(newIds + "pl");
+
+  //           newIds.forEach((id) => {
+  //             axios
+  //               .get(
+  //                 "https://clubs.bits-dvm.org/items/clubs/" +
+  //                   id +
+  //                   "?fields[]=*.*.*"
+  //               )
+  //               .then((response) => {
+  //                 newClubs = [...newClubs, response.data.data];
+  //                 console.log(newClubs);
+  //                 this.clubs = newClubs;
+  //               });
+  //           });
+  //         });
+  //     } else {
+  //       return axios
+  //         .get("https://clubs.bits-dvm.org/items/clubs?fields[]=*.*.*")
+  //         .then((response) => {
+  //           this.clubs = response.data.data;
+  //           console.log(this.clubs);
+  //         });
+  //     }
+  //   },
+  // },
 };
 </script>
 

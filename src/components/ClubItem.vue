@@ -60,19 +60,25 @@ import axios from 'axios'
 data() {
     
 		return {
-			clubs: [],
+			clubs: [
+      {
+        "id":"1",
+        "name":"xyz",
+        "type":"coding"
+      }
+    ],
           error: null,
         
     }
   },
-  async mounted () {
-    try {
-      const response = await axios.get('https://clubs.bits-dvm.org/items/clubs')
-      this.clubs = response.data.data
-    } catch (error) {
-      this.error = error;
-    }
-  }
+//   async mounted () {
+//     try {
+//       const response = await axios.get('https://clubs.bits-dvm.org/items/clubs')
+//       this.clubs = response.data.data
+//     } catch (error) {
+//       this.error = error;
+//     }
+//   }
  }
 </script>
 

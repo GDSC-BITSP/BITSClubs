@@ -316,7 +316,7 @@ font-size: 26px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            margin: 30px 60px 0 60px;
+            margin: 0px 60px 0 60px;
         }
 
         

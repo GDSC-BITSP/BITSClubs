@@ -46,7 +46,7 @@
         <p>BITS Pilani</p>
       </div>
     </div>
-    </div>
+
 
 </template>
 
@@ -107,8 +107,10 @@ color: #FFF;
 text-decoration: none;
 }
 .home-footer-2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color:#FFFFFF;
+  margin-top: 100px;
+  font-weight: 0;
 }
 
 .footer-bits {
