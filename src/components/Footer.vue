@@ -1,12 +1,12 @@
 <template>
-  <v-footer padless class="">
-    <v-card flat tile color="#222F37" width="100%" height="330px" class="mx-auto">
+  <v-footer padless>
+    <v-card flat tile color="#222F37" width="100%" height="330px" class="mx-auto footer-card">
       <v-card-text>
         <div class="footer-dev pt-12">Developers</div>
       </v-card-text>
       <div class="pt-12 pb-3">
         <!-- <v-img class="gdsc-logo mx-auto" src="https://svgshare.com/i/nPe.svg"></v-img> -->
-        <svg width="575" height="36" viewBox="0 0 575 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="logo" width="575" height="36" viewBox="0 0 575 36" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M90.0984 26.6922C88.1499 25.6157 86.5365 24.0486 85.4283 22.1559C84.3022 20.2026 83.7109 18.0013 83.7109 15.7627C83.7109 13.524 84.3022 11.3228 85.4283 9.36946C86.5365 7.47678 88.1499 5.9096 90.0984 4.83316C92.0624 3.73473 94.2923 3.16473 96.5584 3.18189C98.3153 3.17397 100.057 3.49338 101.69 4.12281C103.209 4.69389 104.568 5.60557 105.655 6.78352L103.544 8.83359C102.735 7.8763 101.692 7.13085 100.51 6.66513C99.2548 6.15483 97.9063 5.89625 96.5456 5.90492C94.8409 5.90395 93.1652 6.33341 91.6829 7.15116C90.1721 7.96763 88.9156 9.16442 88.0456 10.6157C87.1494 12.1983 86.6794 13.9752 86.6794 15.7814C86.6794 17.5876 87.1494 19.3645 88.0456 20.947C88.9156 22.3983 90.1721 23.5951 91.6829 24.4116C93.5712 25.5036 95.7836 25.9446 97.962 25.663C100.14 25.3814 102.157 24.3937 103.686 22.86C104.31 22.19 104.803 21.415 105.142 20.5732C105.512 19.6357 105.729 18.6474 105.783 17.6445H96.629V14.99H108.542C108.652 15.5655 108.71 16.1493 108.715 16.7347C108.716 18.2048 108.471 19.6653 107.99 21.0592C107.514 22.442 106.72 23.7013 105.668 24.7418C103.333 27.1429 100.296 28.3434 96.5584 28.3434C94.2923 28.3606 92.0624 27.7906 90.0984 26.6922Z"
             fill="#D9D9D9" />
@@ -148,32 +148,9 @@ export default {
   flex-grow: 0;
 }
 
-.home-footer {
-  background-color: #222f37;
-
-
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-
-.home-footer-1 {
-  font-size: 2rem;
-  margin-bottom: 60px;
-  font-weight: 500;
-  color: #FFF;
-  text-decoration: none;
-}
-
-.home-footer-2 {
-  font-size: 1.5rem;
-  color: #FFFFFF;
-  margin-top: 100px;
-  font-weight: 0;
-}
-
 .footer-bits {
-  width: 575px;
-  height: 34px;
+  /* width: 575px; */
+  /* height: 34px; */
 
   font-family: 'Google-Sans';
   font-style: normal;
@@ -193,5 +170,35 @@ export default {
   order: 1;
   align-self: stretch;
   flex-grow: 0;
+}
+
+@media(max-width: 650px) {
+
+.footer-card{
+  height: 280px !important;
+}
+
+  .footer-dev {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .footer-bits {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 34px;
+    /* padding-bottom: 20px; */
+  }
+
+  .gdsc-logo{
+    /* width: 300px; */
+    height: 30px;
+  }
+
+  .logo{
+    height: 34px;
+    width: 300px;
+  }
 }
 </style>

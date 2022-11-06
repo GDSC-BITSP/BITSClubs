@@ -1,17 +1,17 @@
 <template>
-    <v-card class="d-flex justify-space-around" color="#1E1F1E" flat tile>
-        <v-card class="mx-auto" color="#1E1F1E">
+    <v-card flat class="d-flex justify-space-around" color="#1E1F1E">
+        <v-card flat class="mx-auto dev-card" color="#1E1F1E">
             <v-img :src="require(`@/assets/images/${imgName}`)" class="dev-img justify-center mx-auto"></v-img>
 
             <v-card-title class="dev-name mx-auto mt-5 justify-center">
                 {{ name }}
             </v-card-title>
 
-            <v-card-subtitle class="dev-post mx-auto my-1 px-0">
+            <v-card-subtitle class="dev-post justify-center mx-auto my-2 px-0">
                 {{ post }}
             </v-card-subtitle>
 
-            <div class="d-flex justify-center">
+            <div class="d-flex justify-center social-logo">
                 <div class="px-1">
                     <a :href="linkedinurl">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="socials">
@@ -69,6 +69,7 @@ export default {
 
     width: 230px;
     height: 230px;
+    margin-top: 20px !important;
 
     /* background: url(.jpg); */
     border: 5px solid #1F86FB;
@@ -83,7 +84,7 @@ export default {
 }
 
 .dev-name {
-    width: 240px;
+    /* width: 240px; */
     /* height: 34px; */
 
     font-family: "Google-Sans";
@@ -94,6 +95,7 @@ export default {
     /* identical to box height, or 121% */
 
     text-align: center;
+    margin: auto;
 
     color: #FFFFFF;
 
@@ -105,7 +107,7 @@ export default {
 }
 
 .dev-post {
-    width: 240px;
+    /* width: 240px; */
     /* height: 28px; */
 
     font-family: "Google-Sans";
@@ -116,14 +118,20 @@ export default {
     /* identical to box height, or 117% */
 
     text-align: center;
+    margin: auto;
+    justify-content: center;
 
-    color: #C7C7C7 !important;
+    color: #8F8F8F !important;
 
     /* Inside auto layout */
 
     flex: none;
     order: 0;
     flex-grow: 1;
+}
+
+.social-logo{
+    padding-bottom: 10px;
 }
 
 .socials {
@@ -156,6 +164,7 @@ path#svg:hover {
     .dev-img {
         width: 96px;
         height: 96px;
+        padding-top: 20px !important;
     }
 
     .dev-name {
@@ -163,6 +172,7 @@ path#svg:hover {
         font-weight: 400;
         font-size: 20px;
         line-height: 25px;
+        padding-bottom: 25px;
     }
 
     .dev-post {
@@ -170,6 +180,17 @@ path#svg:hover {
         font-weight: 400;
         font-size: 20px;
         line-height: 25px;
+        padding-bottom: 30px;
+    }
+
+    .dev-card{
+        width: 195px;
+        background-color: #232323 !important;
+        border-radius: 12px !important;
+    }
+
+    .social-logo{
+        padding-bottom: 20px;
     }
 }
 </style>

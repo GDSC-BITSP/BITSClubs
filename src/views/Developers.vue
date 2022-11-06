@@ -2,11 +2,11 @@
   <v-app>
     <v-main>
 
-      <div class="bg-color">
+      <div class="dev-page">
         <div class="post-title mx-auto">Frontend Developers</div>
 
         <v-row class="d-flex justify-space-around">
-          <v-col class="mb-15 bg-color" lg="3" v-for="dev in data[0]" :key="dev.no">
+          <v-col class="mb-15" lg="3" v-for="dev in data[0]" :key="dev.no">
             <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin"
               :githuburl="dev.github" />
           </v-col>
@@ -14,8 +14,8 @@
 
         <div class="post-title mx-auto mb-6">Backend Developers</div>
 
-        <v-row class="d-flex justify-space-around bg-color"> 
-          <v-col class="mb-6 bg-color" lg="3" v-for="dev in data[1]" :key="dev.no">
+        <v-row class="d-flex justify-space-around">
+          <v-col class="mb-6" lg="3" v-for="dev in data[1]" :key="dev.no">
             <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin"
               :githuburl="dev.github" />
           </v-col>
@@ -23,8 +23,8 @@
 
         <div class="post-title mx-auto">Creative Team</div>
 
-        <v-row class="d-flex justify-space-around bg-color">
-          <v-col class="mb-6 bg-color" lg="3" v-for="dev in data[2]" :key="dev.no">
+        <v-row class="d-flex justify-space-around">
+          <v-col class="mb-6" lg="3" v-for="dev in data[2]" :key="dev.no">
             <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin"
               :githuburl="dev.github" />
           </v-col>
@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       data: [Fdetails, Bdetails, Cdetails],
-      
+
     };
   },
 };
@@ -80,8 +80,9 @@ export default {
 
 
 
-.bg-color {
+.dev-page {
   background-color: #1E1F1E !important;
+  padding-bottom: 100px;
 }
 
 .post-title {
@@ -99,8 +100,13 @@ export default {
 }
 
 @media(max-width: 650px) {
-    
+  .post-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
-
-
 </style>
