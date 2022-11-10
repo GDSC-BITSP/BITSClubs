@@ -1,8 +1,8 @@
 <template>
-      <div class="calendar">
-            <div class="cal-header">Ongoing Recruitments</div>
+  <div class="calendar">
+    <div class="cal-header">Ongoing Recruitments</div>
 
-            <!-- <div
+    <!-- <div
                   class="calWeekC"
                   v-for="(value, key, index) in random"
                   :key="index"
@@ -24,125 +24,130 @@
                         </div>
                   </div>
             </div> -->
-            <div class="listOfRecruiting">
-                  <div v-for="club in ClubList">
-                        <ClubListItem class="listItem" :registrationLink="club.registrationLink" :name="club.name" :isRecruiting="club.isRecruiting" :showEvent="club.showEvent" :eventDetails="club.eventDetails"/>
-                  </div>
-            </div>
+    <div class="listOfRecruiting">
+      <div v-for="club in ClubList">
+        <ClubListItem
+          class="listItem"
+          :registrationLink="club.registrationLink"
+          :name="club.name"
+          :isRecruiting="club.isRecruiting"
+          :showEvent="club.showEvent"
+          :eventDetails="club.eventDetails"
+        />
       </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import CalendarItem from "@/components/CalendarItem.vue";
-import ClubListItem from "../components/ClubListItem.vue"
+import ClubListItem from "../components/ClubListItem.vue";
 import axios from "axios";
 
 export default {
-      name: "Recruitments",
-      components: {
-            ClubListItem
-      },
+  name: "Recruitments",
+  components: {
+    ClubListItem,
+  },
 
-      data() {
-            // return { random: {}, events: [], error: null, random_new: {} };
-            return {
-                  //set showEvent as false for every item in the ClubList for recruitments so the event Details wont show up
-                  ClubList: [
-                        
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"false",
-                                          "eventDetails":"xyz",
-                                          "registrationLink":"https://www.google.com/"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"false",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"false",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"false",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"false",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"false",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"false",
-                                          "eventDetails":"xyz"
-                                    }
+  data() {
+    // return { random: {}, events: [], error: null, random_new: {} };
+    return {
+      //set showEvent as false for every item in the ClubList for recruitments so the event Details wont show up
+      ClubList: [
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "false",
+          eventDetails: "xyz",
+          registrationLink: "https://www.google.com/",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "false",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "false",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "false",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "false",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "false",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "false",
+          eventDetails: "xyz",
+        },
+      ],
+    };
+  },
 
-                  ]
-            }
-      },
+  // async mounted() {
+  //       try {
+  //             const response = await axios.get(
+  //                   "https://clubs.bits-dvm.org/items/events"
+  //             );
+  //             this.events = response.data.data;
+  //             console.log(this.events);
 
-      // async mounted() {
-      //       try {
-      //             const response = await axios.get(
-      //                   "https://clubs.bits-dvm.org/items/events"
-      //             );
-      //             this.events = response.data.data;
-      //             console.log(this.events);
+  //             this.events.forEach((event) => {
+  //                   console.log(event);
+  //                   let eventDate = new Date(event.eventdatetime);
+  //                   console.log(eventDate);
+  //                   let currentDate = new Date().getDate();
+  //                   // let eventMonth = eventDate.getMonth();
+  //                   let month = eventDate.toLocaleString("default", {
+  //                         month: "short",
+  //                   });
+  //                   let year = eventDate.getFullYear();
+  //                   let identifier = `${month} ${year}`;
 
-      //             this.events.forEach((event) => {
-      //                   console.log(event);
-      //                   let eventDate = new Date(event.eventdatetime);
-      //                   console.log(eventDate);
-      //                   let currentDate = new Date().getDate();
-      //                   // let eventMonth = eventDate.getMonth();
-      //                   let month = eventDate.toLocaleString("default", {
-      //                         month: "short",
-      //                   });
-      //                   let year = eventDate.getFullYear();
-      //                   let identifier = `${month} ${year}`;
+  //                   if (eventDate >= currentDate) {
+  //                         try {
+  //                               this.random_new[identifier].push(event);
+  //                               this.random = Object.assign(
+  //                                     {},
+  //                                     this.random,
+  //                                     this.random_new
+  //                               );
+  //                         } catch (error) {
+  //                               this.random_new[identifier] = [];
+  //                               this.random_new[identifier].push(event);
 
-      //                   if (eventDate >= currentDate) {
-      //                         try {
-      //                               this.random_new[identifier].push(event);
-      //                               this.random = Object.assign(
-      //                                     {},
-      //                                     this.random,
-      //                                     this.random_new
-      //                               );
-      //                         } catch (error) {
-      //                               this.random_new[identifier] = [];
-      //                               this.random_new[identifier].push(event);
-
-      //                               this.random = Object.assign(
-      //                                     {},
-      //                                     this.random,
-      //                                     this.random_new
-      //                               );
-      //                         }
-      //                   }
-      //             });
-      //       } catch (error) {
-      //             this.error = error;
-      //             console.log(error);
-      //       }
-      //       console.log(this.random);
-      // },
+  //                               this.random = Object.assign(
+  //                                     {},
+  //                                     this.random,
+  //                                     this.random_new
+  //                               );
+  //                         }
+  //                   }
+  //             });
+  //       } catch (error) {
+  //             this.error = error;
+  //             console.log(error);
+  //       }
+  //       console.log(this.random);
+  // },
 };
 </script>
 
@@ -167,32 +172,32 @@ export default {
       letter-spacing: 0.4px;
 }*/
 .calendar {
-      text-align: left;
+  text-align: left;
 }
 .cal-header {
-      font-size: 34px;
-      color: white;
-      font-weight: 500;
-      padding: 30px 0 30px 0;
-      letter-spacing: 0.8px;
-      margin-left: 40px;
-} 
+  font-size: 34px;
+  color: white;
+  font-weight: 500;
+  padding: 30px 0 30px 0;
+  letter-spacing: 0.8px;
+  margin-left: 40px;
+}
 .listOfRecruiting {
-      color:#FFF;
-      font-size: 1.5rem;
+  color: #fff;
+  font-size: 1.5rem;
 }
 /* .listItem {
       display: flex;
 } */
 
 @media (max-width: 650px) {
-      .cal-header {
-            font-size: 7vw;
-      }
+  .cal-header {
+    font-size: 7vw;
+  }
 
-      .cal-grid {
-            margin-left: 0px;
-            justify-content: space-around;
-      }
+  .cal-grid {
+    margin-left: 0px;
+    justify-content: space-around;
+  }
 }
 </style>

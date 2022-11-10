@@ -6,14 +6,12 @@
 </template>
 
 <script>
-
-import Navbar from '@/components/Navbar.vue'
-
+import Navbar from "@/components/Navbar.vue";
 
 export default {
   components: {
-    Navbar
-  }
+    Navbar,
+  },
 };
 </script>
 
@@ -21,7 +19,8 @@ export default {
 @font-face {
   font-family: "Google-Sans";
   src: local("Google-Sans"),
-    url(./assets/GoogleSans-22Jan2018-v1_27/GoogleSansDisplay-Regular-v1.27.ttf) format("truetype");
+    url(./assets/GoogleSans-22Jan2018-v1_27/GoogleSansDisplay-Regular-v1.27.ttf)
+      format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,7 +30,7 @@ body {
   padding: 0px;
   font-family: Google-Sans, sans-serif;
   text-align: center;
-  background: #1E1F1E;
+  background: #1e1f1e;
 }
 
 .modal-override {
@@ -39,10 +38,10 @@ body {
   color: white;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .modal-override {
     left: 5% !important;
-    width: 90% !important
+    width: 90% !important;
   }
 }
 </style>

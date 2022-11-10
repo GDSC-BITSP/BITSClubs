@@ -109,7 +109,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .further-details {
   display: flex;
@@ -166,7 +165,6 @@ export default {
 .event-name h3 {
   font-size: 20px;
   text-transform: capitalize;
-
 }
 
 .club-link {
@@ -271,7 +269,6 @@ export default {
   font-size: 15px;
 }
 
-
 @media (max-width: 650px) {
   .vm--modal {
     width: 200px !important;
@@ -305,11 +302,10 @@ export default {
   }
 
   .modal-wrapper h4 {
-  font-size: 16px;
-}
-  .event-desc p{
+    font-size: 16px;
+  }
+  .event-desc p {
     font-size: 14px;
   }
 }
 </style>
-

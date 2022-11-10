@@ -1,4 +1,3 @@
-
 <template>
   <div class="club">
     <div class="club-header">
@@ -14,18 +13,17 @@
               alt=""
               :src="'https://1.bp.blogspot.com/-NoQBskNMHY8/YO9hxmOQqdI/AAAAAAAAKfY/C4oFclPzW_0T65eKNLMhJZyN17A9nkydwCLcBGAsYHQ/s0/GDSC.png'"
           />   -->
-          <img
-              class="club-logo"
-              alt=""
-              src="../assets/ClubImg.png"
-          /> 
+          <img class="club-logo" alt="" src="../assets/ClubImg.png" />
         </div>
 
         <div class="club-info-text">
           <h1 class="club-title">GDSC BITS Pilani</h1>
           <div class="tags-section" id="desktop-tags">
-             <div v-for="tag in club.tags" :key="tag.tags_id.id">
-              <AllTags :name="tag.tags_id.tagtitle" :desc="tag.tags_id.tagdesc" />
+            <div v-for="tag in club.tags" :key="tag.tags_id.id">
+              <AllTags
+                :name="tag.tags_id.tagtitle"
+                :desc="tag.tags_id.tagdesc"
+              />
             </div>
           </div>
         </div>
@@ -36,7 +34,7 @@
         </div>
         <button class="apply-now">
           <a> Apply Now</a>
-        </button>  
+        </button>
       </div>
       <!-- <div class="club-status">
         <a href="https://google.com" v-if="club.isrecruiting"
@@ -92,19 +90,26 @@
       <span>
         <div class="club-text">
           <h2 class="club-subh">About Us</h2>
-          <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+          <p class="club-p">
+            Google Developer Student Clubs are university based community groups
+            for students interested in Google developer technologies. Students
+            from all undergraduate or graduate programs with an interest in
+            growing as a developer are welcome. By joining a GDSC, students grow
+            their knowledge in a peer-to-peer learning environment and build
+            solutions for local businesses and their communities.
+          </p>
         </div>
 
         <div class="club-text">
           <h2 class="club-subh" id="media">Key Events</h2>
           <div class="choose-events">
-            <span class="event-choice" @click="choice=0">All</span>
-            <span class="event-choice" @click="choice=1">Upcoming</span>
-            <span class="event-choice" @click="choice=2">Past</span>
+            <span class="event-choice" @click="choice = 0">All</span>
+            <span class="event-choice" @click="choice = 1">Upcoming</span>
+            <span class="event-choice" @click="choice = 2">Past</span>
           </div>
           <!-- <div class="cal-grid"> -->
-            <!-- <div v-for="calItem in club.events" :key="calItem.id"> -->
-              <!-- <CalendarItem
+          <!-- <div v-for="calItem in club.events" :key="calItem.id"> -->
+          <!-- <CalendarItem
                 :imgSrc="'https://clubs.bits-dvm.org/assets/'+ calItem.events_id.eventfeatureimage"
                 :eventName="calItem.events_id.eventname"
                 :date="calItem.events_id.eventdatetime"
@@ -114,26 +119,26 @@
               :shortDescription="calItem.events_id.eventshortdesc"
 
               /> -->
-            <!-- </div> -->
-            <div class="events-grid" v-if="choice==0">
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-            </div>
-            <div class="events-grid" v-if="choice==1">
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-            </div>
-            <div class="events-grid" v-if="choice==2">
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-            </div>
+          <!-- </div> -->
+          <div class="events-grid" v-if="choice == 0">
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+          </div>
+          <div class="events-grid" v-if="choice == 1">
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+          </div>
+          <div class="events-grid" v-if="choice == 2">
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+          </div>
           <!-- </div> -->
         </div>
 
@@ -141,20 +146,35 @@
           <h2 class="club-subh" id="media1">Prerequisites/Recruitments</h2>
           <div class="media-slider">
             <div v-for="item in club.portfolio" :key="item.id">
-            <!-- <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" /> -->
+              <!-- <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" /> -->
             </div>
           </div>
         </div>
 
         <div class="club-text">
           <h2 class="club-subh">Perks of Applying</h2>
-          <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+          <p class="club-p">
+            Google Developer Student Clubs are university based community groups
+            for students interested in Google developer technologies. Students
+            from all undergraduate or graduate programs with an interest in
+            growing as a developer are welcome. By joining a GDSC, students grow
+            their knowledge in a peer-to-peer learning environment and build
+            solutions for local businesses and their communities.
+          </p>
         </div>
 
         <div class="recruitment">
           <div class="club-text">
             <h2 class="club-subh">Recruitment Process</h2>
-            <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+            <p class="club-p">
+              Google Developer Student Clubs are university based community
+              groups for students interested in Google developer technologies.
+              Students from all undergraduate or graduate programs with an
+              interest in growing as a developer are welcome. By joining a GDSC,
+              students grow their knowledge in a peer-to-peer learning
+              environment and build solutions for local businesses and their
+              communities.
+            </p>
           </div>
         </div>
 
@@ -169,37 +189,44 @@
 
         <div class="club-text">
           <h2 class="club-subh">Frequently Asked Questions</h2>
-          <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+          <p class="club-p">
+            Google Developer Student Clubs are university based community groups
+            for students interested in Google developer technologies. Students
+            from all undergraduate or graduate programs with an interest in
+            growing as a developer are welcome. By joining a GDSC, students grow
+            their knowledge in a peer-to-peer learning environment and build
+            solutions for local businesses and their communities.
+          </p>
         </div>
 
         <div class="club-text">
           <h2 class="club-subh" id="media">Club Heads</h2>
           <div class="club-head-grid">
-              <div class="head-card">
-              <img src="../assets/Club_Events_4.png" alt=""/>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
               <h1>Gurupam Bhaiya</h1>
               <h1>Creative Lead</h1>
-              </div>
-              <div class="head-card">
-              <img src="../assets/Club_Events_4.png" alt=""/>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
               <h1>Gurupam Bhaiya</h1>
               <h1>Creative Lead</h1>
-              </div>
-              <div class="head-card">
-              <img src="../assets/Club_Events_4.png" alt=""/>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
               <h1>Gurupam Bhaiya</h1>
               <h1>Creative Lead</h1>
-              </div>
-              <div class="head-card">
-              <img src="../assets/Club_Events_4.png" alt=""/>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
               <h1>Gurupam Bhaiya</h1>
               <h1>Creative Lead</h1>
-              </div>
-              <div class="head-card">
-              <img src="../assets/Club_Events_4.png" alt=""/>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
               <h1>Gurupam Bhaiya</h1>
               <h1>Creative Lead</h1>
-              </div>
+            </div>
             <!-- <ContactCard
             v-for="contact in club.contacts" :key="contact.id"
                 :imgSrc="'https://clubs.bits-dvm.org/assets/'+ contact.contacts_id.photo"  
@@ -232,7 +259,7 @@ export default {
       id: this.$route.params.id,
       club: {},
       error: null,
-      choice:0
+      choice: 0,
     };
   },
   async mounted() {
@@ -264,17 +291,15 @@ export default {
 }
 
 .event-choice {
-  margin:20px;
+  margin: 20px;
 }
 .event-underline {
   text-decoration: underline;
 }
 
-
-
 ::-webkit-scrollbar {
-    width: 13px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 13px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 .club-header,
 .club-info {
@@ -308,7 +333,6 @@ export default {
   justify-content: center;
   margin-top: 0px;
 }
-
 
 #media1 {
   margin-left: 50px;
@@ -344,14 +368,14 @@ export default {
   margin-top: 4vh;
   margin-left: 2vw;
 }
-.club-info-desc{
+.club-info-desc {
   font-size: 1.2rem;
   text-align: left;
   margin-top: 2vw;
   color: rgb(143, 142, 142);
   margin-left: 2vw;
 }
-.apply-now{
+.apply-now {
   width: 12.5em;
   height: 2em;
   background-color: rgb(30, 134, 250);
@@ -363,7 +387,7 @@ export default {
   margin-left: 2vw;
 }
 .choose-events {
-  color: #FFF;
+  color: #fff;
   display: flex;
   flex-direction: row-reverse;
   font-size: 1.25rem;
@@ -399,7 +423,7 @@ export default {
   box-shadow: rgba(255, 101, 101, 0.2) 0px 8px 24px;
 } */
 
-.club-about{
+.club-about {
   height: 86vh;
   display: flex;
   flex-direction: column;
@@ -422,7 +446,7 @@ export default {
   margin-left: 50px;
   margin-right: 3vw;
 }
-.Flipped{
+.Flipped {
   direction: rtl;
 }
 
@@ -448,7 +472,6 @@ export default {
   font-weight: 400;
   letter-spacing: 0.4px;
   font-style: bold;
-
 }
 
 .media-slider {
@@ -475,14 +498,14 @@ export default {
   display: flex;
   /* width:650px; */
   overflow-x: scroll;
-  overflow-y: hidden ;
+  overflow-y: hidden;
   white-space: nowrap;
 }
-.events-grid>img {
-  margin:20px;
-  height:12vw;
+.events-grid > img {
+  margin: 20px;
+  height: 12vw;
   width: 12vw;
-  border-radius:100px;
+  border-radius: 100px;
 }
 
 .cal-grid {
@@ -501,27 +524,27 @@ export default {
   justify-content: flex-start;
   align-items: center;
   margin-left: 153px; */
-    display: flex;
-  width:100%;
+  display: flex;
+  width: 100%;
   /* overflow-x: scroll; */
   margin-left: 153px;
 }
-.club-head-grid>img {
-  margin:20px;
-  height:12vw;
+.club-head-grid > img {
+  margin: 20px;
+  height: 12vw;
   width: 12vw;
-  border-radius:100px;
+  border-radius: 100px;
 }
-.head-card>img {
-  margin:20px;
-  height:12vw;
+.head-card > img {
+  margin: 20px;
+  height: 12vw;
   width: 12vw;
-  border-radius:100px;
+  border-radius: 100px;
 }
 .head-card {
-  color: #FFF;
+  color: #fff;
 }
-.head-card>h1 {
+.head-card > h1 {
   font-size: 1.5rem;
 }
 

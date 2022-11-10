@@ -8,21 +8,17 @@
             alt=""
             :src="'https://clubs.bits-dvm.org/assets/'+club.logo.id"
           /> -->
-          <img
-            class="club-logo"
-            alt=""
-            src="../assets/GDSC_Logo.png"
-          />
+          <img class="club-logo" alt="" src="../assets/GDSC_Logo.png" />
         </div>
 
         <div class="club-info-text">
           <!-- <h1 class="club-title">{{ club.name }}</h1> -->
           <h1 class="club-title">GDSC BITS Pilani</h1>
           <div class="tags-section" id="desktop-tags">
-             <!-- <div v-for="tag in club.tags" :key="tag.tags_id.id">
+            <!-- <div v-for="tag in club.tags" :key="tag.tags_id.id">
           <AllTags :name="tag.tags_id.tagtitle" :desc="tag.tags_id.tagdesc" /> -->
-          <div>IT Services and Consulting</div>
-        <!-- </div> -->
+            <div>IT Services and Consulting</div>
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -88,14 +84,16 @@
       <div class="cal-grid">
         <div v-for="calItem in club.events" :key="calItem.id">
           <CalendarItem
-            :imgSrc="'https://clubs.bits-dvm.org/assets/'+ calItem.events_id.eventfeatureimage"
+            :imgSrc="
+              'https://clubs.bits-dvm.org/assets/' +
+              calItem.events_id.eventfeatureimage
+            "
             :eventName="calItem.events_id.eventname"
             :date="calItem.events_id.eventdatetime"
             :link="calItem.events_id.eventlink"
             :description="calItem.events_id.eventdesc"
             :modalName="calItem.events_id.eventname"
-           :shortDescription="calItem.events_id.eventshortdesc"
-
+            :shortDescription="calItem.events_id.eventshortdesc"
           />
         </div>
       </div>
@@ -105,7 +103,11 @@
       <h2 class="club-subh" id="media">Portfolio and Past Work</h2>
       <div class="media-slider">
         <div v-for="item in club.portfolio" :key="item.id">
-        <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" />
+          <Feature
+            :imgSrc="
+              'https://clubs.bits-dvm.org/assets/' + item.directus_files_id.id
+            "
+          />
         </div>
       </div>
     </div>
@@ -126,7 +128,11 @@
       <h2 class="club-subh" id="media">Gallery</h2>
       <div class="media-slider">
         <div v-for="item in club.gallery" :key="item.id">
-          <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" />
+          <Feature
+            :imgSrc="
+              'https://clubs.bits-dvm.org/assets/' + item.directus_files_id.id
+            "
+          />
         </div>
       </div>
     </div>
@@ -140,11 +146,14 @@
       <h2 class="club-subh" id="media">Contact Us</h2>
       <div class="contact-grid">
         <ContactCard
-        v-for="contact in club.contacts" :key="contact.id"
-            :imgSrc="'https://clubs.bits-dvm.org/assets/'+ contact.contacts_id.photo"  
-            :name="contact.contacts_id.name"
-            :email="contact.contacts_id.email"
-          />
+          v-for="contact in club.contacts"
+          :key="contact.id"
+          :imgSrc="
+            'https://clubs.bits-dvm.org/assets/' + contact.contacts_id.photo
+          "
+          :name="contact.contacts_id.name"
+          :email="contact.contacts_id.email"
+        />
       </div>
     </div>
   </div>
@@ -174,7 +183,7 @@ export default {
   async mounted() {
     try {
       const response = await axios.get(
-        "https://clubs.bits-dvm.org/items/clubs/" + this.id+ '?fields[]=*.*.*'
+        "https://clubs.bits-dvm.org/items/clubs/" + this.id + "?fields[]=*.*.*"
       );
       this.club = response.data.data;
       console.log(this.club.events);
@@ -196,8 +205,8 @@ export default {
 }
 
 ::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 .club-header,
 .club-info {
