@@ -1,40 +1,35 @@
 <template>
   <div class="tooltip-box">
     <slot />
-    <div
-      class="tooltip"
-    >
-      <span
-        class="text"
-      >{{ text }}</span>
+    <div class="tooltip">
+      <span class="text">{{ text }}</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: { 
+  props: {
     text: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 
 <style scoped>
-.tooltip-box { 
+.tooltip-box {
   position: relative;
   display: inline-block;
-  
 }
 
-.tooltip-box:hover .tooltip{
+.tooltip-box:hover .tooltip {
   display: inline-block;
   opacity: 1;
 }
 
-.tooltip { 
+.tooltip {
   color: #413f3f;
   text-align: left;
   padding: 3px;
@@ -49,7 +44,6 @@ export default {
   z-index: 10;
   background: #e4e3e6;
   display: none;
-
 }
 
 .text::after {

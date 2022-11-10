@@ -1,9 +1,5 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-    ? '/BITSClubs/'
-    : '/',
+  publicPath: process.env.NODE_ENV === "production" ? "/BITSClubs/" : "/",
 
-    transpileDependencies: [
-      'vuetify'
-    ]
-}
+  transpileDependencies: ["vuetify"],
+};

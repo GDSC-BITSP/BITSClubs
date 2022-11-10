@@ -1,8 +1,8 @@
 <template>
-      <div class="calendar">
-            <div class="cal-header">Upcoming Events</div>
+  <div class="calendar">
+    <div class="cal-header">Upcoming Events</div>
 
-            <!-- <div
+    <!-- <div
                   class="calWeekC"
                   v-for="(value, key, index) in random"
                   :key="index"
@@ -24,123 +24,126 @@
                         </div>
                   </div>
             </div> -->
-            <div class="listOfRecruiting">
-                  <div v-for="club in ClubList">
-                        <ClubListItem :name="club.name" :isRecruiting="club.isRecruiting" :showEvent="club.showEvent" :eventDetails="club.eventDetails"/>
-                  </div>
-            </div>
+    <div class="listOfRecruiting">
+      <div v-for="club in ClubList">
+        <ClubListItem
+          :name="club.name"
+          :isRecruiting="club.isRecruiting"
+          :showEvent="club.showEvent"
+          :eventDetails="club.eventDetails"
+        />
       </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import CalendarItem from "@/components/CalendarItem.vue";
-import ClubListItem from "../components/ClubListItem.vue"
+import ClubListItem from "../components/ClubListItem.vue";
 import axios from "axios";
 
 export default {
-      name: "Events",
-      components: {
-            ClubListItem
-      },
+  name: "Events",
+  components: {
+    ClubListItem,
+  },
 
-      data() {
-            // return { random: {}, events: [], error: null, random_new: {} };
-            return {
-                  ClubList: [
-                        
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"true",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"true",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"true",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"true",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"true",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"true",
-                                          "eventDetails":"xyz"
-                                    },
-                                    {
-                                          "name":"Music Club",
-                                          "isRecruiting":"true",
-                                          "showEvent":"true",
-                                          "eventDetails":"xyz"
-                                    }
+  data() {
+    // return { random: {}, events: [], error: null, random_new: {} };
+    return {
+      ClubList: [
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "true",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "true",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "true",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "true",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "true",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "true",
+          eventDetails: "xyz",
+        },
+        {
+          name: "Music Club",
+          isRecruiting: "true",
+          showEvent: "true",
+          eventDetails: "xyz",
+        },
+      ],
+    };
+  },
 
-                  ]
-            }
-      },
+  // async mounted() {
+  //       try {
+  //             const response = await axios.get(
+  //                   "https://clubs.bits-dvm.org/items/events"
+  //             );
+  //             this.events = response.data.data;
+  //             console.log(this.events);
 
-      // async mounted() {
-      //       try {
-      //             const response = await axios.get(
-      //                   "https://clubs.bits-dvm.org/items/events"
-      //             );
-      //             this.events = response.data.data;
-      //             console.log(this.events);
+  //             this.events.forEach((event) => {
+  //                   console.log(event);
+  //                   let eventDate = new Date(event.eventdatetime);
+  //                   console.log(eventDate);
+  //                   let currentDate = new Date().getDate();
+  //                   // let eventMonth = eventDate.getMonth();
+  //                   let month = eventDate.toLocaleString("default", {
+  //                         month: "short",
+  //                   });
+  //                   let year = eventDate.getFullYear();
+  //                   let identifier = `${month} ${year}`;
 
-      //             this.events.forEach((event) => {
-      //                   console.log(event);
-      //                   let eventDate = new Date(event.eventdatetime);
-      //                   console.log(eventDate);
-      //                   let currentDate = new Date().getDate();
-      //                   // let eventMonth = eventDate.getMonth();
-      //                   let month = eventDate.toLocaleString("default", {
-      //                         month: "short",
-      //                   });
-      //                   let year = eventDate.getFullYear();
-      //                   let identifier = `${month} ${year}`;
+  //                   if (eventDate >= currentDate) {
+  //                         try {
+  //                               this.random_new[identifier].push(event);
+  //                               this.random = Object.assign(
+  //                                     {},
+  //                                     this.random,
+  //                                     this.random_new
+  //                               );
+  //                         } catch (error) {
+  //                               this.random_new[identifier] = [];
+  //                               this.random_new[identifier].push(event);
 
-      //                   if (eventDate >= currentDate) {
-      //                         try {
-      //                               this.random_new[identifier].push(event);
-      //                               this.random = Object.assign(
-      //                                     {},
-      //                                     this.random,
-      //                                     this.random_new
-      //                               );
-      //                         } catch (error) {
-      //                               this.random_new[identifier] = [];
-      //                               this.random_new[identifier].push(event);
-
-      //                               this.random = Object.assign(
-      //                                     {},
-      //                                     this.random,
-      //                                     this.random_new
-      //                               );
-      //                         }
-      //                   }
-      //             });
-      //       } catch (error) {
-      //             this.error = error;
-      //             console.log(error);
-      //       }
-      //       console.log(this.random);
-      // },
+  //                               this.random = Object.assign(
+  //                                     {},
+  //                                     this.random,
+  //                                     this.random_new
+  //                               );
+  //                         }
+  //                   }
+  //             });
+  //       } catch (error) {
+  //             this.error = error;
+  //             console.log(error);
+  //       }
+  //       console.log(this.random);
+  // },
 };
 </script>
 
@@ -165,26 +168,25 @@ export default {
       letter-spacing: 0.4px;
 }*/
 .cal-header {
-      font-size: 34px;
-      color: white;
-      font-weight: 500;
-      padding: 30px 0 30px 0;
-      letter-spacing: 0.8px;
-} 
+  font-size: 34px;
+  color: white;
+  font-weight: 500;
+  padding: 30px 0 30px 0;
+  letter-spacing: 0.8px;
+}
 .listOfRecruiting {
-      color:#FFF;
-      font-size: 1.25rem;
-  
+  color: #fff;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 650px) {
-      .cal-header {
-            font-size: 7vw;
-      }
+  .cal-header {
+    font-size: 7vw;
+  }
 
-      .cal-grid {
-            margin-left: 0px;
-            justify-content: space-around;
-      }
+  .cal-grid {
+    margin-left: 0px;
+    justify-content: space-around;
+  }
 }
 </style>

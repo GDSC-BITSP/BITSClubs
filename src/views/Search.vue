@@ -49,11 +49,11 @@ export default {
     // };
     clubs: [
       {
-        "id":"1",
-        "name":"xyz",
-        "type":"coding"
-      }
-    ]
+        id: "1",
+        name: "xyz",
+        type: "coding",
+      },
+    ];
   },
   // mounted: function mounted() {
   //   this.getAllData();

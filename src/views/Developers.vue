@@ -1,14 +1,18 @@
 <template>
   <v-app>
     <v-main>
-
       <div class="dev-page">
         <div class="post-title mx-auto">Frontend Developers</div>
 
         <v-row class="d-flex justify-space-around">
           <v-col class="mb-15" lg="3" v-for="dev in data[0]" :key="dev.no">
-            <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin"
-              :githuburl="dev.github" />
+            <Card
+              :imgName="dev.img"
+              :name="dev.name"
+              :post="dev.post"
+              :linkedinurl="dev.linkedin"
+              :githuburl="dev.github"
+            />
           </v-col>
         </v-row>
 
@@ -16,8 +20,13 @@
 
         <v-row class="d-flex justify-space-around">
           <v-col class="mb-6" lg="3" v-for="dev in data[1]" :key="dev.no">
-            <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin"
-              :githuburl="dev.github" />
+            <Card
+              :imgName="dev.img"
+              :name="dev.name"
+              :post="dev.post"
+              :linkedinurl="dev.linkedin"
+              :githuburl="dev.github"
+            />
           </v-col>
         </v-row>
 
@@ -25,38 +34,39 @@
 
         <v-row class="d-flex justify-space-around">
           <v-col class="mb-6" lg="3" v-for="dev in data[2]" :key="dev.no">
-            <Card :imgName="dev.img" :name="dev.name" :post="dev.post" :linkedinurl="dev.linkedin"
-              :githuburl="dev.github" />
+            <Card
+              :imgName="dev.img"
+              :name="dev.name"
+              :post="dev.post"
+              :linkedinurl="dev.linkedin"
+              :githuburl="dev.github"
+            />
           </v-col>
         </v-row>
-
       </div>
 
       <Footer />
-
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Card from '../components/Card.vue';
-import Footer from '../components/Footer.vue';
-import Fdetails from '../components/Fdetails.json'
-import Bdetails from '../components/Bdetails.json'
-import Cdetails from '../components/Cdetails.json'
-
+import Card from "../components/Card.vue";
+import Footer from "../components/Footer.vue";
+import Fdetails from "../components/Fdetails.json";
+import Bdetails from "../components/Bdetails.json";
+import Cdetails from "../components/Cdetails.json";
 
 export default {
-  name: 'Developers',
+  name: "Developers",
 
   components: {
     Card,
-    Footer
+    Footer,
   },
   data() {
     return {
       data: [Fdetails, Bdetails, Cdetails],
-
     };
   },
 };
@@ -65,11 +75,11 @@ export default {
 <style>
 /* adding fonts */
 
-
 @font-face {
   font-family: "Google-Sans";
   src: local("Google-Sans"),
-    url(../assets/GoogleSans-22Jan2018-v1_27/GoogleSansDisplay-Regular-v1.27.ttf) format("truetype");
+    url(../assets/GoogleSans-22Jan2018-v1_27/GoogleSansDisplay-Regular-v1.27.ttf)
+      format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -78,10 +88,8 @@ export default {
   font-family: "Google-Sans" !important;
 } */
 
-
-
 .dev-page {
-  background-color: #1E1F1E !important;
+  background-color: #1e1f1e !important;
   padding-bottom: 100px;
 }
 
@@ -96,10 +104,10 @@ export default {
   line-height: 56px;
   /* identical to box height, or 117% */
 
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-@media(max-width: 650px) {
+@media (max-width: 650px) {
   .post-title {
     font-weight: 700;
     font-size: 28px;

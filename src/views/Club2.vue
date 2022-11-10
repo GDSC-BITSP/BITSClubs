@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 <template>
   <div class="club">
     <div class="club-header">
@@ -14,18 +13,17 @@
               alt=""
               :src="'https://1.bp.blogspot.com/-NoQBskNMHY8/YO9hxmOQqdI/AAAAAAAAKfY/C4oFclPzW_0T65eKNLMhJZyN17A9nkydwCLcBGAsYHQ/s0/GDSC.png'"
           />   -->
-          <img
-              class="club-logo"
-              alt=""
-              src="../assets/ClubImg.png"
-          /> 
+          <img class="club-logo" alt="" src="../assets/ClubImg.png" />
         </div>
 
         <div class="club-info-text">
           <h1 class="club-title">GDSC BITS Pilani</h1>
           <div class="tags-section" id="desktop-tags">
-             <div v-for="tag in club.tags" :key="tag.tags_id.id">
-              <AllTags :name="tag.tags_id.tagtitle" :desc="tag.tags_id.tagdesc" />
+            <div v-for="tag in club.tags" :key="tag.tags_id.id">
+              <AllTags
+                :name="tag.tags_id.tagtitle"
+                :desc="tag.tags_id.tagdesc"
+              />
             </div>
           </div>
         </div>
@@ -36,7 +34,7 @@
         </div>
         <button class="apply-now">
           <a> Apply Now</a>
-        </button>  
+        </button>
       </div>
       <!-- <div class="club-status">
         <a href="https://google.com" v-if="club.isrecruiting"
@@ -92,22 +90,29 @@
       <span>
         <div class="club-text">
           <h2 class="club-subh">About Us</h2>
-          <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+          <p class="club-p">
+            Google Developer Student Clubs are university based community groups
+            for students interested in Google developer technologies. Students
+            from all undergraduate or graduate programs with an interest in
+            growing as a developer are welcome. By joining a GDSC, students grow
+            their knowledge in a peer-to-peer learning environment and build
+            solutions for local businesses and their communities.
+          </p>
         </div>
 
         <div class="club-text">
           <h2 class="club-subh">Key Events</h2>
         </div>
-        <div class="club-text">  
+        <div class="club-text">
           <div class="choose-events">
-            <span class="event-choice" @click="choice=0">All</span>
-            <span class="event-choice" @click="choice=1">Upcoming</span>
-            <span class="event-choice" @click="choice=2">Past</span>
+            <span class="event-choice" @click="choice = 0">All</span>
+            <span class="event-choice" @click="choice = 1">Upcoming</span>
+            <span class="event-choice" @click="choice = 2">Past</span>
           </div>
-        </div>  
-          <!-- <div class="cal-grid"> -->
-            <!-- <div v-for="calItem in club.events" :key="calItem.id"> -->
-              <!-- <CalendarItem
+        </div>
+        <!-- <div class="cal-grid"> -->
+        <!-- <div v-for="calItem in club.events" :key="calItem.id"> -->
+        <!-- <CalendarItem
                 :imgSrc="'https://clubs.bits-dvm.org/assets/'+ calItem.events_id.eventfeatureimage"
                 :eventName="calItem.events_id.eventname"
                 :date="calItem.events_id.eventdatetime"
@@ -117,62 +122,84 @@
               :shortDescription="calItem.events_id.eventshortdesc"
 
               /> -->
-            <!-- </div> -->
-          <div class="club-text">  
-            <div class="events-grid" v-if="choice==0">
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-            </div>
-            <div class="events-grid" v-if="choice==1">
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-            </div>
-            <div class="events-grid" v-if="choice==2">
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-            </div>
+        <!-- </div> -->
+        <div class="club-text">
+          <div class="events-grid" v-if="choice == 0">
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+          </div>
+          <div class="events-grid" v-if="choice == 1">
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+          </div>
+          <div class="events-grid" v-if="choice == 2">
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+          </div>
           <!-- </div> -->
         </div>
 
         <div class="club-text">
           <h2 class="club-subh">Prerequisites/Recruitments</h2>
           <!-- <div class="media-slider"> -->
-          <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
-            <!-- <div v-for="item in club.portfolio" :key="item.id"> -->
-            <!-- <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" /> -->
-            <!-- </div> -->
+          <p class="club-p">
+            Google Developer Student Clubs are university based community groups
+            for students interested in Google developer technologies. Students
+            from all undergraduate or graduate programs with an interest in
+            growing as a developer are welcome. By joining a GDSC, students grow
+            their knowledge in a peer-to-peer learning environment and build
+            solutions for local businesses and their communities.
+          </p>
+          <!-- <div v-for="item in club.portfolio" :key="item.id"> -->
+          <!-- <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" /> -->
+          <!-- </div> -->
           <!-- </div> -->
         </div>
 
         <div class="club-text">
           <h2 class="club-subh">Perks of Applying</h2>
-          <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+          <p class="club-p">
+            Google Developer Student Clubs are university based community groups
+            for students interested in Google developer technologies. Students
+            from all undergraduate or graduate programs with an interest in
+            growing as a developer are welcome. By joining a GDSC, students grow
+            their knowledge in a peer-to-peer learning environment and build
+            solutions for local businesses and their communities.
+          </p>
         </div>
 
         <div class="recruitment">
           <div class="club-text">
             <h2 class="club-subh">Recruitment Process</h2>
-            <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+            <p class="club-p">
+              Google Developer Student Clubs are university based community
+              groups for students interested in Google developer technologies.
+              Students from all undergraduate or graduate programs with an
+              interest in growing as a developer are welcome. By joining a GDSC,
+              students grow their knowledge in a peer-to-peer learning
+              environment and build solutions for local businesses and their
+              communities.
+            </p>
           </div>
         </div>
 
         <div class="club-text">
           <h2 class="club-subh">Gallery</h2>
         </div>
-        <div class="club-text">  
-            <div class="gallery-grid" v-if="choice==0">
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
-              <img src="../assets/Club_Events_4.png" alt=""/>
+        <div class="club-text">
+          <div class="gallery-grid" v-if="choice == 0">
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
+            <img src="../assets/Club_Events_4.png" alt="" />
             <div v-for="item in club.gallery" :key="item.id">
               <!-- <Feature :imgSrc="'https://clubs.bits-dvm.org/assets/'+item.directus_files_id.id" /> -->
             </div>
@@ -181,46 +208,55 @@
 
         <div class="club-text">
           <h2 class="club-subh">Frequently Asked Questions</h2>
-          <p class="club-p">Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their communities.</p>
+          <p class="club-p">
+            Google Developer Student Clubs are university based community groups
+            for students interested in Google developer technologies. Students
+            from all undergraduate or graduate programs with an interest in
+            growing as a developer are welcome. By joining a GDSC, students grow
+            their knowledge in a peer-to-peer learning environment and build
+            solutions for local businesses and their communities.
+          </p>
         </div>
 
         <div class="club-text">
-          <div class="club-head" id="media"><h2 class="club-subh">Club Heads</h2></div>
+          <div class="club-head" id="media">
+            <h2 class="club-subh">Club Heads</h2>
+          </div>
         </div>
-        <div class="club-text">  
-            <div class="club-head-grid">
-                <div class="head-card">
-                <img src="../assets/Club_Events_4.png" alt=""/>
-                <h2 class="head-name">Gurupam Bhaiya</h2>
-                <h2 class="head-position">Creative Lead</h2>
-                </div>
-                <div class="head-card">
-                <img src="../assets/Club_Events_4.png" alt=""/>
-                <h2 class="head-name">Gurupam Bhaiya</h2>
-                <h2 class="head-position">Creative Lead</h2>
-                </div>
-                <div class="head-card">
-                <img src="../assets/Club_Events_4.png" alt=""/>
-                <h2 class="head-name">Gurupam Bhaiya</h2>
-                <h2 class="head-position">Creative Lead</h2>
-                </div>
-                <div class="head-card">
-                <img src="../assets/Club_Events_4.png" alt=""/>
-                <h2 class="head-name">Gurupam Bhaiya</h2>
-                <h2 class="head-position">Creative Lead</h2>
-                </div>
-                <div class="head-card">
-                <img src="../assets/Club_Events_4.png" alt=""/>
-                <h2 class="head-name">Gurupam Bhaiya</h2>
-                <h2 class="head-position">Creative Lead</h2>
-                </div>
-              <!-- <ContactCard
+        <div class="club-text">
+          <div class="club-head-grid">
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
+              <h2 class="head-name">Gurupam Bhaiya</h2>
+              <h2 class="head-position">Creative Lead</h2>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
+              <h2 class="head-name">Gurupam Bhaiya</h2>
+              <h2 class="head-position">Creative Lead</h2>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
+              <h2 class="head-name">Gurupam Bhaiya</h2>
+              <h2 class="head-position">Creative Lead</h2>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
+              <h2 class="head-name">Gurupam Bhaiya</h2>
+              <h2 class="head-position">Creative Lead</h2>
+            </div>
+            <div class="head-card">
+              <img src="../assets/Club_Events_4.png" alt="" />
+              <h2 class="head-name">Gurupam Bhaiya</h2>
+              <h2 class="head-position">Creative Lead</h2>
+            </div>
+            <!-- <ContactCard
               v-for="contact in club.contacts" :key="contact.id"
                   :imgSrc="'https://clubs.bits-dvm.org/assets/'+ contact.contacts_id.photo"  
                   :name="contact.contacts_id.name"
                   :email="contact.contacts_id.email"
                 /> -->
-            </div>
+          </div>
         </div>
       </span>
     </div>
@@ -246,7 +282,7 @@ export default {
       id: this.$route.params.id,
       club: {},
       error: null,
-      choice:0
+      choice: 0,
     };
   },
   async mounted() {
@@ -268,121 +304,118 @@ export default {
 #mobile-tags {
   display: none;
 }
-@media only screen and (max-width: 800px){
-div.club {
-  display: flex;
-  flex-direction: column;
-  margin-left: 0vw;
-  margin-top: 4vh;
-  justify-content: flex-start;
-}
-.event-choice {
-  margin:20px;
-}
-.event-underline {
-  text-decoration: underline;
-}
+@media only screen and (max-width: 800px) {
+  div.club {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0vw;
+    margin-top: 4vh;
+    justify-content: flex-start;
+  }
+  .event-choice {
+    margin: 20px;
+  }
+  .event-underline {
+    text-decoration: underline;
+  }
 
+  ::-webkit-scrollbar {
+    width: 13px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  .club-header,
+  .club-info {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(35, 34, 34);
+    height: 85vh;
+    width: 85vw;
+    justify-content: space-evenly;
+    border-radius: 12px;
+    margin-left: 5vw;
+  }
 
+  .club-logo {
+    height: 60vw;
+    width: 60vw;
+    border-radius: 15px;
+    box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
+    -webkit-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
+    margin-top: 5vh;
+    margin-left: -2vw;
+  }
 
-::-webkit-scrollbar {
-    width: 13px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
-.club-header,
-.club-info {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(35, 34, 34);
-  height: 85vh;
-  width: 85vw;
-  justify-content: space-evenly;
-  border-radius: 12px;
-  margin-left: 5vw;
-}
+  .club-info-text {
+    margin-left: 0.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 0px;
+  }
 
-.club-logo {
-  height: 60vw;
-  width: 60vw;
-  border-radius: 15px;
-  box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
-  -webkit-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
-  -moz-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
-  margin-top: 5vh;
-  margin-left: -2vw;
-}
+  #media1 {
+    margin-left: 50px;
+  }
 
-.club-info-text {
-  margin-left: 0.2vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 0px;
-}
+  .tags-section {
+    display: flex;
+    margin-left: -5px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 
+  .tag {
+    margin: 5px 3px 5px 3px;
+    padding: 3px 13px 3px 13px;
+    background: #616161;
+    color: white;
+    border-radius: 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 500;
+  }
 
-#media1 {
-  margin-left: 50px;
-}
+  .club-title {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+    letter-spacing: 1.3px;
+    margin-top: 4vh;
+    margin-left: 8vw;
+  }
+  .club-info-desc {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 2vw;
+    color: rgb(143, 142, 142);
+    margin-left: 8vw;
+  }
+  .apply-now {
+    width: 13.5em;
+    height: 2em;
+    background-color: rgb(30, 134, 250);
+    color: white;
+    font-size: 5vw;
+    font: google-sans;
+    border-radius: 12px;
+    margin-top: 4vh;
+    margin-left: 8vw;
+  }
+  .choose-events {
+    color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 4vw;
+    width: fit-content;
+  }
 
-.tags-section {
-  display: flex;
-  margin-left: -5px;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-
-.tag {
-  margin: 5px 3px 5px 3px;
-  padding: 3px 13px 3px 13px;
-  background: #616161;
-  color: white;
-  border-radius: 25px;
-  font-size: 16px;
-  text-transform: uppercase;
-  display: inline-block;
-  font-weight: 500;
-}
-
-.club-title {
-  font-size: 1.5rem;
-  margin: 0;
-  padding: 0;
-  color: white;
-  letter-spacing: 1.3px;
-  margin-top: 4vh;
-  margin-left: 8vw;
-}
-.club-info-desc{
-  font-size: 1.2rem;
-  text-align: left;
-  margin-top: 2vw;
-  color: rgb(143, 142, 142);
-  margin-left: 8vw;
-}
-.apply-now{
-  width: 13.5em;
-  height: 2em;
-  background-color: rgb(30, 134, 250);
-  color: white;
-  font-size: 5vw;
-  font: google-sans;
-  border-radius: 12px;
-  margin-top: 4vh;
-  margin-left: 8vw;
-}
-.choose-events {
-  color: #FFF;
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 4vw;
-  width: fit-content;
-}
-
-/* .club-status {
+  /* .club-status {
   justify-content: center;
   display: flex;
   align-items: center;
@@ -412,104 +445,103 @@ div.club {
   box-shadow: rgba(255, 101, 101, 0.2) 0px 8px 24px;
 } */
 
-.club-about{
-  /* height: 86vh; */
-  display: flex;
-  flex-direction: column;
-  /* overflow: auto; */
-  margin-top: 0px;
-  margin-left: 30px;
-  /* background-color: rgb(35, 34, 34); */
-  border-radius: 12px;
-  width: 85vw;
-  direction: ltr;
-}
-.choose-events {
-  cursor: pointer;
-  margin-left: -10px;
-}
-.club-text {
-  /* width: 650px; */
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-.Flipped{
-  direction: rtl;
-}
+  .club-about {
+    /* height: 86vh; */
+    display: flex;
+    flex-direction: column;
+    /* overflow: auto; */
+    margin-top: 0px;
+    margin-left: 30px;
+    /* background-color: rgb(35, 34, 34); */
+    border-radius: 12px;
+    width: 85vw;
+    direction: ltr;
+  }
+  .choose-events {
+    cursor: pointer;
+    margin-left: -10px;
+  }
+  .club-text {
+    /* width: 650px; */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .Flipped {
+    direction: rtl;
+  }
 
-.club-subh {
-  /* flex-direction: column; */
-  margin: 50px 0 10px 0;
-  padding: 0;
-  color: white;
-  text-align: left;
-  font-size: 5vw;
-  letter-spacing: 0.8px;
-  text-decoration: underline;
-  font-style: bold;
-  text-decoration-color: rgb(251, 188, 5);
-  text-decoration-thickness: 0.5vh;
-}
+  .club-subh {
+    /* flex-direction: column; */
+    margin: 50px 0 10px 0;
+    padding: 0;
+    color: white;
+    text-align: left;
+    font-size: 5vw;
+    letter-spacing: 0.8px;
+    text-decoration: underline;
+    font-style: bold;
+    text-decoration-color: rgb(251, 188, 5);
+    text-decoration-thickness: 0.5vh;
+  }
 
-.club-p {
-  flex-direction: column;
-  margin: 0px 0 10px 0px;
-  padding: 0;
-  color: rgb(143, 142, 142);
-  text-align: left;
-  font-size: 3.5vw;
-  font-weight: 400;
-  letter-spacing: 0.4px;
-  font-style: bold;
-}
+  .club-p {
+    flex-direction: column;
+    margin: 0px 0 10px 0px;
+    padding: 0;
+    color: rgb(143, 142, 142);
+    text-align: left;
+    font-size: 3.5vw;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    font-style: bold;
+  }
 
-.media-slider {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  margin-left: 50px;
-}
+  .media-slider {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    margin-left: 50px;
+  }
 
-*::-webkit-scrollbar {
-  height: 13px;
-}
+  *::-webkit-scrollbar {
+    height: 13px;
+  }
 
-*::-webkit-scrollbar-track {
-  background-color: rgba(143, 142, 142);
-  border-radius: 12px;
-}
+  *::-webkit-scrollbar-track {
+    background-color: rgba(143, 142, 142);
+    border-radius: 12px;
+  }
 
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(30, 134, 250);
-  border-radius: 12px;
-}
-.events-grid {
-  display: flex;
-  /* width:650px; */
-}
-.events-grid>img {
-  margin:20px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-.gallery-grid {
-  display: flex;
-  /* width:650px; */
-  /* overflow-x: scroll; */
-  /* overflow-y: hidden ; */
-
-}
-.gallery-grid>img {
-  margin:20px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-/* *::-webkit-scrollbar {
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 134, 250);
+    border-radius: 12px;
+  }
+  .events-grid {
+    display: flex;
+    /* width:650px; */
+  }
+  .events-grid > img {
+    margin: 20px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  .gallery-grid {
+    display: flex;
+    /* width:650px; */
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden ; */
+  }
+  .gallery-grid > img {
+    margin: 20px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  /* *::-webkit-scrollbar {
   height: 0px;
 }
 
@@ -523,51 +555,51 @@ div.club {
   border-radius: 10px;
 } */
 
-.cal-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 153px;
-}
+  .cal-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 153px;
+  }
 
-.club-head-grid {
-  /* display: flex;
+  .club-head-grid {
+    /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   margin-left: 153px; */
-  display: flex;
-  flex-direction: row;
-  width:100%;
-  margin-left: 2vw;
-}
-.club-head-grid>img {
-  margin:60px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-.head-card>img {
-  margin:20px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-.head-position{
-  color: rgb(255, 254, 254);
-  font-size: 2.5vw;
-  font: google-sans;
-}
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 2vw;
+  }
+  .club-head-grid > img {
+    margin: 60px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  .head-card > img {
+    margin: 20px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  .head-position {
+    color: rgb(255, 254, 254);
+    font-size: 2.5vw;
+    font: google-sans;
+  }
 
-.head-name{
-  color: rgb(255, 254, 254);
-  font-size: 3vw;
-  font: google-sans;
-}
-/* @media (max-width:650px) {
+  .head-name {
+    color: rgb(255, 254, 254);
+    font-size: 3vw;
+    font: google-sans;
+  }
+  /* @media (max-width:650px) {
   .club {
     display: flex;
     flex-direction: column;
@@ -582,7 +614,7 @@ div.club {
   }
 } */
 
-/* @media (max-width: 650px) {
+  /* @media (max-width: 650px) {
   #mobile-tags {
     display: unset;
   }
@@ -667,122 +699,118 @@ div.club {
   }
 } */
 }
-@media only screen and (min-width: 800px){
-  
+@media only screen and (min-width: 800px) {
   div.club {
-  display: flex;
-  flex-direction: row;
-  margin-left: 0vw;
-  margin-top: 4vh;
-  justify-content: center;
-  height: 82vh;
-}
-.event-choice {
-  margin:20px;
-}
-.event-underline {
-  text-decoration: underline;
-}
+    display: flex;
+    flex-direction: row;
+    margin-left: 0vw;
+    margin-top: 4vh;
+    justify-content: center;
+    height: 82vh;
+  }
+  .event-choice {
+    margin: 20px;
+  }
+  .event-underline {
+    text-decoration: underline;
+  }
 
+  ::-webkit-scrollbar {
+    width: 13px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  .club-header,
+  .club-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(35, 34, 34);
+    /* height: 86vh; */
+    width: 27.5vw;
+    justify-content: flex-start;
+    border-radius: 12px;
+    margin-left: 0px;
+  }
 
+  .club-logo {
+    height: 22.5vw;
+    width: 22.5vw;
+    border-radius: 15px;
+    box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
+    -webkit-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
+    margin-top: 5vh;
+  }
 
-::-webkit-scrollbar {
-    width: 13px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
-.club-header,
-.club-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: rgb(35, 34, 34);
-  /* height: 86vh; */
-  width: 27.5vw;
-  justify-content: flex-start;
-  border-radius: 12px;
-  margin-left: 0px;
-}
+  .club-info-text {
+    margin-left: 0.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 0px;
+  }
 
-.club-logo {
-  height: 22.5vw;
-  width: 22.5vw;
-  border-radius: 15px;
-  box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
-  -webkit-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
-  -moz-box-shadow: -8px 11px 45px 1px rgba(0, 0, 0, 0.52);
-  margin-top: 5vh;
-}
+  #media1 {
+    margin-left: 50px;
+  }
 
-.club-info-text {
-  margin-left: 0.2vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 0px;
-}
+  .tags-section {
+    display: flex;
+    margin-left: -5px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 
+  .tag {
+    margin: 5px 3px 5px 3px;
+    padding: 3px 13px 3px 13px;
+    background: #616161;
+    color: white;
+    border-radius: 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 500;
+  }
 
-#media1 {
-  margin-left: 50px;
-}
+  .club-title {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+    letter-spacing: 1.3px;
+    margin-top: 4vh;
+    margin-left: 2.5vw;
+  }
+  .club-info-desc {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 2vw;
+    color: rgb(143, 142, 142);
+    margin-left: 2.5vw;
+  }
+  .apply-now {
+    width: 13.5em;
+    height: 2em;
+    background-color: rgb(30, 134, 250);
+    color: white;
+    font-size: 1.7vw;
+    font: google-sans;
+    border-radius: 12px;
+    margin-top: 5vh;
+    margin-left: 2.5vw;
+  }
+  .choose-events {
+    color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1.25rem;
+  }
 
-.tags-section {
-  display: flex;
-  margin-left: -5px;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-
-.tag {
-  margin: 5px 3px 5px 3px;
-  padding: 3px 13px 3px 13px;
-  background: #616161;
-  color: white;
-  border-radius: 25px;
-  font-size: 16px;
-  text-transform: uppercase;
-  display: inline-block;
-  font-weight: 500;
-}
-
-.club-title {
-  font-size: 1.5rem;
-  margin: 0;
-  padding: 0;
-  color: white;
-  letter-spacing: 1.3px;
-  margin-top: 4vh;
-  margin-left: 2.5vw;
-}
-.club-info-desc{
-  font-size: 1.2rem;
-  text-align: left;
-  margin-top: 2vw;
-  color: rgb(143, 142, 142);
-  margin-left: 2.5vw;
-}
-.apply-now{
-  width: 13.5em;
-  height: 2em;
-  background-color: rgb(30, 134, 250);
-  color: white;
-  font-size: 1.7vw;
-  font: google-sans;
-  border-radius: 12px;
-  margin-top: 5vh;
-  margin-left: 2.5vw;
-}
-.choose-events {
-  color: #FFF;
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 1.25rem;
-}
-
-/* .club-status {
+  /* .club-status {
   justify-content: center;
   display: flex;
   align-items: center;
@@ -812,107 +840,106 @@ div.club {
   box-shadow: rgba(255, 101, 101, 0.2) 0px 8px 24px;
 } */
 
-.club-about{
-  /* height: 86vh; */
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  margin-top: 0px;
-  margin-left: 30px;
-  background-color: rgb(35, 34, 34);
-  border-radius: 12px;
-  width: 65vw;
-  direction: ltr;
-}
-.choose-events {
-  cursor: pointer;
-}
-.club-text {
-  /* width: 650px; */
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  margin-left: 50px;
-  margin-right: 3vw;
-}
-.Flipped{
-  direction: rtl;
-}
+  .club-about {
+    /* height: 86vh; */
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin-top: 0px;
+    margin-left: 30px;
+    background-color: rgb(35, 34, 34);
+    border-radius: 12px;
+    width: 65vw;
+    direction: ltr;
+  }
+  .choose-events {
+    cursor: pointer;
+  }
+  .club-text {
+    /* width: 650px; */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-left: 50px;
+    margin-right: 3vw;
+  }
+  .Flipped {
+    direction: rtl;
+  }
 
-.club-subh {
-  /* flex-direction: column; */
-  margin: 50px 0 10px 0;
-  padding: 0;
-  color: white;
-  text-align: left;
-  font-size: 1.8vw;
-  letter-spacing: 0.8px;
-  text-decoration: underline;
-  font-style: bold;
-  text-decoration-color: rgb(251, 188, 5);
-  text-decoration-thickness: 0.5vh;
-}
+  .club-subh {
+    /* flex-direction: column; */
+    margin: 50px 0 10px 0;
+    padding: 0;
+    color: white;
+    text-align: left;
+    font-size: 1.8vw;
+    letter-spacing: 0.8px;
+    text-decoration: underline;
+    font-style: bold;
+    text-decoration-color: rgb(251, 188, 5);
+    text-decoration-thickness: 0.5vh;
+  }
 
-.club-p {
-  flex-direction: column;
-  margin: 0px 0 10px 0px;
-  padding: 0;
-  color: rgb(143, 142, 142);
-  text-align: left;
-  font-size: 1.5vw;
-  font-weight: 400;
-  letter-spacing: 0.4px;
-  font-style: bold;
+  .club-p {
+    flex-direction: column;
+    margin: 0px 0 10px 0px;
+    padding: 0;
+    color: rgb(143, 142, 142);
+    text-align: left;
+    font-size: 1.5vw;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    font-style: bold;
+  }
 
-}
+  .media-slider {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    margin-left: 50px;
+  }
 
-.media-slider {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  margin-left: 50px;
-}
+  *::-webkit-scrollbar {
+    height: 13px;
+  }
 
-*::-webkit-scrollbar {
-  height: 13px;
-}
+  *::-webkit-scrollbar-track {
+    background-color: rgba(143, 142, 142);
+    border-radius: 12px;
+  }
 
-*::-webkit-scrollbar-track {
-  background-color: rgba(143, 142, 142);
-  border-radius: 12px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(30, 134, 250);
-  border-radius: 12px;
-}
-.events-grid {
-  display: flex;
-  /* width:650px; */
-  overflow-x: scroll;
-  overflow-y: hidden ;
-  white-space: nowrap;
-}
-.events-grid>img {
-  margin:20px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-.gallery-grid {
-  display: flex;
-  /* width:650px; */
-  /* overflow-x: scroll; */
-  /* overflow-y: hidden ; */
-  white-space: nowrap;
-}
-.gallery-grid>img {
-  margin:20px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-/* *::-webkit-scrollbar {
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 134, 250);
+    border-radius: 12px;
+  }
+  .events-grid {
+    display: flex;
+    /* width:650px; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .events-grid > img {
+    margin: 20px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  .gallery-grid {
+    display: flex;
+    /* width:650px; */
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden ; */
+    white-space: nowrap;
+  }
+  .gallery-grid > img {
+    margin: 20px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  /* *::-webkit-scrollbar {
   height: 0px;
 }
 
@@ -926,56 +953,56 @@ div.club {
   border-radius: 10px;
 } */
 
-.cal-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 153px;
-}
+  .cal-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 153px;
+  }
 
-.club-head-grid {
-  /* display: flex;
+  .club-head-grid {
+    /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   margin-left: 153px; */
-  display: flex;
-  flex-direction: row;
-  width:100%;
-  margin-left: 153px;
-}
-.club-head-grid>img {
-  margin:20px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-.head-card>img {
-  margin:20px;
-  height:12vw;
-  width: 12vw;
-  border-radius:200px;
-}
-.head-card {
-  color: #FFF;
-}
-.head-card>h1 {
-  font-size: 1.5rem;
-}
-.head-postion{
-  color: rgb(217, 216, 216);
-  font-size: 1vw;
-  font: google-sans;
-}
-.head-name{
-  color: rgb(255, 254, 254);
-  font-size: 3vw;
-  font: google-sans;
-}
-/* @media (max-width:650px) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 153px;
+  }
+  .club-head-grid > img {
+    margin: 20px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  .head-card > img {
+    margin: 20px;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 200px;
+  }
+  .head-card {
+    color: #fff;
+  }
+  .head-card > h1 {
+    font-size: 1.5rem;
+  }
+  .head-postion {
+    color: rgb(217, 216, 216);
+    font-size: 1vw;
+    font: google-sans;
+  }
+  .head-name {
+    color: rgb(255, 254, 254);
+    font-size: 3vw;
+    font: google-sans;
+  }
+  /* @media (max-width:650px) {
   .club {
     display: flex;
     flex-direction: column;
@@ -990,7 +1017,7 @@ div.club {
   }
 } */
 
-/* @media (max-width: 650px) {
+  /* @media (max-width: 650px) {
   #mobile-tags {
     display: unset;
   }
