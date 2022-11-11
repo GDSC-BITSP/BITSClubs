@@ -40,7 +40,7 @@
         <router-link
           active-class="nav-active"
           class="nav-item"
-          to="/calendar"
+          to="/events"
           exact
           ><span class="remove-tab">Events</span></router-link
         >
@@ -49,7 +49,7 @@
         <router-link
           active-class="nav-active"
           class="nav-item"
-          to="/about"
+          to="/recruitments"
           exact
           ><span class="remove-tab">Recruitments</span></router-link
         >

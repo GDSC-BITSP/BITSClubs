@@ -8,7 +8,7 @@
     <div class="home--display--tiles_desktop">
       <div class="home--display--tiles">
         <div class="col1">
-          <div class="flip-card">
+          <!-- <div class="flip-card"> -->
             <div class="col1--row1 flip-card-inner">
               <div class="flip-card-front">
                 <img src="../assets/Col1Row1.png" />
@@ -576,8 +576,6 @@ router-link {
 
 @media (max-width: 650px) {
   .dropdown_mobile {
-    /* display: block; */
-    display: inline;
     color: #fff;
     width: 130px;
   }
@@ -613,6 +611,9 @@ router-link {
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
+  }
+  .mobile {
+    display:inline-block;
   }
 
   .hero-image {

@@ -8,13 +8,15 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: function () {
+      return import("../views/Home2.vue");
+    },
   },
   {
     path: "/search",
     name: "Search",
     component: function () {
-      return import("../views/Search.vue");
+      return import("../views/Club3.vue");
     },
   },
   {
@@ -38,13 +40,13 @@ const routes = [
       return import("../views/Club2.vue");
     },
   },
-  {
-    path: "/Assocs",
-    name: "Assocs",
-    component: function () {
-      return import("../views/Club1.vue");
-    },
-  },
+  // {
+  //   path: "/Assocs",
+  //   name: "Assocs",
+  //   component: function () {
+  //     return import("../views/Club1.vue");
+  //   },
+  // },
   {
     path: "/Depts",
     name: "Depts",
@@ -66,6 +68,56 @@ const routes = [
       return import("../views/Developers.vue");
     },
   },
+  {
+    path: "/departments",
+    name: "Departments",
+    component: function () {
+      return import("../views/Departments.vue");
+    },
+  },
+  {
+    path: "/assocs",
+    name: "Assocs",
+    component: function () {
+      return import("../views/Assocs.vue");
+    },
+  },
+  {
+    path: "/clubs",
+    name: "Clubs",
+    component: function () {
+      return import("../views/Club3.vue");
+    },
+  },
+  {
+    path: "/department",
+    name: "Department",
+    component: function () {
+      return import("../views/Club2.vue");
+    },
+  },
+  {
+    path: "/department",
+    name: "Department",
+    component: function () {
+      return import("../views/Club2.vue");
+    },
+  },
+  {
+    path: "/techteam",
+    name: "Techteam",
+    component: function () {
+      return import("../views/Club2.vue");
+    },
+  },
+  {
+    path: "/assoc",
+    name: "Assoc",
+    component: function () {
+      return import("../views/Club2.vue");
+    },
+  },
+
 ];
 
 const router = new VueRouter({
