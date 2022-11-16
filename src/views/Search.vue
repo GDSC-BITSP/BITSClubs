@@ -1,5 +1,5 @@
 <template>
-    <!-- <div class="search">
+  <!-- <div class="search">
       <div class="search--list">
           <div class="clubs">Clubs</div>
           <div class="departments">Departments</div>
@@ -10,7 +10,7 @@
       </div>
     </div> -->
   <!-- <div class="search"> -->
-    <!-- <input
+  <!-- <input
       type="text"
       class="search-bar"
       placeholder="Search for any department, assoc or club"
@@ -39,21 +39,20 @@
     </div>
   </div> -->
   <div>
-    <Sidebar/>
+    <Sidebar />
   </div>
-
 </template>
 
 <script>
 import ClubItem from "@/components/ClubItem.vue";
-import Sidebar from "@/components/Sidebar.vue"
+import Sidebar from "@/components/Sidebar.vue";
 import axios from "axios";
 
 export default {
   name: "Search",
   components: {
     ClubItem,
-    Sidebar
+    Sidebar,
   },
   data() {
     // return {
@@ -65,11 +64,11 @@ export default {
     // };
     clubs: [
       {
-        "id":"1",
-        "name":"xyz",
-        "type":"coding"
-      }
-    ]
+        id: "1",
+        name: "xyz",
+        type: "coding",
+      },
+    ];
   },
   // mounted: function mounted() {
   //   this.getAllData();
@@ -139,53 +138,53 @@ export default {
   color:white;
 } */
 .search {
-  color:white;
+  color: white;
   font-size: 2.5rem;
   display: flex;
   /* justify-content: space-around; */
-  padding:80px;
+  padding: 80px;
 }
 .search--list {
-  margin-top:0px;
-  width:30%;
+  margin-top: 0px;
+  width: 30%;
   text-align: left;
 }
 .clubs {
   margin-bottom: 10px;
-  padding:20px;
-  border-radius:10px;
+  padding: 20px;
+  border-radius: 10px;
   border: none;
 }
 .clubs:hover {
-  background-color: #222F37;
+  background-color: #222f37;
   cursor: pointer;
 }
 .clubs:clicked {
-  background-color: #222F37;
+  background-color: #222f37;
 }
 .departments:hover {
-  background-color: #222F37;
+  background-color: #222f37;
   cursor: pointer;
 }
 .assocs:hover {
-  background-color: #222F37;
+  background-color: #222f37;
   cursor: pointer;
 }
 .departments {
   margin-bottom: 10px;
-  padding:20px;
-  border-radius:10px;
+  padding: 20px;
+  border-radius: 10px;
   border: none;
 }
 .assocs {
   margin-bottom: 30px;
-  padding:20px;
-  border-radius:10px;
+  padding: 20px;
+  border-radius: 10px;
   border: none;
 }
 .display--list {
   margin-left: 50px;
-  width:70%;
+  width: 70%;
   text-align: left;
   overflow-y: auto;
 }
@@ -232,5 +231,4 @@ input {
 .router-link-style {
   color: inherit;
   text-decoration: none; /* no underline */
-
 </style>
