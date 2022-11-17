@@ -117,7 +117,6 @@ const routes = [
       return import("../views/Club2.vue");
     },
   },
-
 ];
 
 const router = new VueRouter({
